@@ -1,0 +1,132 @@
+﻿@section PageStyle
+{
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/formiojs@3.9.0/dist/formio.full.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" />
+    <style>
+        body {
+            color: #000;
+        }
+
+        .container {
+            padding-right: 1px;
+            padding-left: 1px;
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        .topbar .top-navbar {
+            min-height: 50px !important;
+            padding: 0;
+        }
+
+        .navbar {
+            position: relative;
+            min-height: 50px;
+            margin-bottom:-18px;
+            border: 0px solid transparent;
+        }
+
+        .drag-container {
+            padding: 10px;
+            border: dotted 2px #e8e8e8;
+            background: #fff;
+        }
+
+        .btn {
+            color: #000;
+        }
+
+        .formio-form {
+            position: relative;
+            min-height: 80px;
+            background: #fff;
+            padding: 5px;
+        }
+
+        .card-body {
+            background: #fff;
+        }
+        .btn-secondary {
+            border-color: #4F5467 !important;
+            color:#fff !important;
+        }
+        .btn-circle {
+            border-radius: 100% !important;
+            width: 40px !important;
+            height: 40px !important;
+            padding: 10px !important;
+        }
+        /*.tab-content.container {
+            border: 1px solid #ddd;
+            border-top: none;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        pre {
+            height: 450px;
+            overflow-y: scroll;
+        }
+
+        body {
+            padding: 20px;
+        }*/
+    </style>
+
+
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="container mt-3">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="nav-item">
+                            <a href="#builder" class="active" role="tab" data-toggle="tab" aria-selected="true">Builder</a>
+                        </li>
+                        <li role="presentation" class="nav-item">
+                            <a href="#form"  role="tab" data-toggle="tab" aria-selected="true">Form</a>
+                        </li>
+                        <li role="presentation" class="nav-item">
+                            <a href="#result" role="tab" data-toggle="tab" aria-selected="true">Result</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content container">
+                        <div class="tab-pane active" id="builder" role="tabpanel">
+                            <div id="formio-builder"></div>
+                        </div>
+                        <div class="tab-pane" id="form" role="tabpanel">
+                            <pre><code class="language-javascript"></code></pre>
+                        </div>
+                        <div class="tab-pane" id="result" role="tabpanel">
+                            <div id="formio-form">
+                                Form not initialized
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section PageScript
+{
+    @*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>*@
+    @*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>*@
+    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*@
+    <script src="https://unpkg.com/formiojs@3.9.0/dist/formio.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+    <script src="~/Content/app_script/page_script/questionnaire.js?version=@DateTime.Now"></script>
+    
+}

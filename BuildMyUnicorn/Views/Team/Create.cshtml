@@ -1,0 +1,216 @@
+﻿@section PageStyle
+{
+    <link href="~/assets/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <style>
+        .dz-error-mark {
+            background: #b10429;
+            display: inline-block;
+            padding: 5px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+            display: block;
+            max-width: 100%;
+            height: 110px !important;
+            margin: 0px auto;
+        }
+
+        #imagepreview {
+            height: 120px;
+            border: 1px solid #3b3838;
+            width: 90%;
+            text-align: center;
+        }
+
+        #my_img {
+            height: 120px;
+        }
+
+        .img-thumbnail {
+            height: 210px;
+        }
+    </style>
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor"><a href="~/Team"><i class="mdi mdi-arrow-left"></i> Back to Team</a></h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">The Business  </li>
+                <li class="breadcrumb-item active">Team  </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <form id="frm_ClientTeam" class="form-material m-t-40">
+                <input type="hidden" id="ImageID" name="ImageID" />
+                <input type="hidden" id="RoleInCompany" name="RoleInCompany" />
+                <input type="hidden" id="ImageID" name="ImageID" />
+
+                <div class="card-body">
+
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" id="FirstName" name="FirstName" class="form-control form-control-line">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" id="LastName" name="LastName" class="form-control form-control-line">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" id="Email" name="Email" class="form-control form-control-line">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" id="Phone" name="Phone" class="form-control form-control-line">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Country</label>
+                                @Html.DropDownList("CountryID", new SelectList(ViewBag.CountryList, "CountryID", "CountryName"), "- Please select -", new { @class = "custom-select col-12" })
+                                @*<input type="text" class="form-control" value="" autocomplete="off">*@
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Role at company</label>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="839f0c8f-b5ce-4e17-bbe9-0b1c3b835dde" name="_RoleInCompany" value="839f0c8f-b5ce-4e17-bbe9-0b1c3b835dde">
+                                    <label class="custom-control-label" for="839f0c8f-b5ce-4e17-bbe9-0b1c3b835dde">Founder</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="8ea0dea8-9c94-454c-a175-3757ea4290f1" name="_RoleInCompany" value="8ea0dea8-9c94-454c-a175-3757ea4290f1">
+                                    <label class="custom-control-label" for="8ea0dea8-9c94-454c-a175-3757ea4290f1">Co Founder</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="cdb14b91-05c4-4054-a2e4-73133d879734" name="_RoleInCompany" value="cdb14b91-05c4-4054-a2e4-73133d879734">
+                                    <label class="custom-control-label" for="cdb14b91-05c4-4054-a2e4-73133d879734">Sales</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="f1110994-d667-4bb4-b856-b7220a2d17a2" name="_RoleInCompany" value="f1110994-d667-4bb4-b856-b7220a2d17a2">
+                                    <label class="custom-control-label" for="f1110994-d667-4bb4-b856-b7220a2d17a2">CEO</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="0c733131-159a-4e16-bf2f-c11de47fe96d" name="_RoleInCompany" value="0c733131-159a-4e16-bf2f-c11de47fe96d">
+                                    <label class="custom-control-label" for="0c733131-159a-4e16-bf2f-c11de47fe96d">COO</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="3d58636e-17e3-4d58-af56-f2f84f654f47" name="_RoleInCompany" value="3d58636e-17e3-4d58-af56-f2f84f654f47">
+                                    <label class="custom-control-label" for="3d58636e-17e3-4d58-af56-f2f84f654f47">CMO</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="84c5d93d-6bcf-464c-8784-111df68f81a6" name="_RoleInCompany" value="84c5d93d-6bcf-464c-8784-111df68f81a6">
+                                    <label class="custom-control-label" for="84c5d93d-6bcf-464c-8784-111df68f81a6">CTO</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="421eaf78-4856-4fd9-8637-4deec149b264" name="_RoleInCompany" value="421eaf78-4856-4fd9-8637-4deec149b264">
+                                    <label class="custom-control-label" for="421eaf78-4856-4fd9-8637-4deec149b264">Business Development</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="421eaf78-4856-4fd9-8637-4deec149b264" name="_RoleInCompany" value="421eaf78-4856-4fd9-8637-4deec149b264">
+                                    <label class="custom-control-label" for="421eaf78-4856-4fd9-8637-4deec149b264">CFO</label>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+
+                                <div class="form-group">
+                                    <label for="wint1">Photograph</label>
+                                    <div class="fileupload">
+
+                                        <div class="btn btn-default btn-file" style="position: relative; text-align:right">
+                                            <input type="button" class="btn btn-primary pull-right" style="display:inline !important" value="Choose File" />
+                                            <input type="file" id="ImageUpload" style="position: absolute;top: 0;right: 0;width: 100%;height: 100%;margin: 0;opacity: 0;">
+
+                                        </div>
+
+                                        <div class="dropzone" id="imagepreview" style="padding:5px;">
+                                            <div id="my_img" class="dz-preview dz-file-preview dz-error" style="position:relative;text-align:center"><img src="/Content/file_upload/profile-dummy.png" class="img-responsive img-thumbnail" /></div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Linked in Profile</label>
+                                <input type="text" id="LinkedProfile" name="LinkedProfile" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Short Bio</label>
+                                <input type="text" id="ShortBio" name="ShortBio" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="form-group text-right">
+
+                    <button type="submit" class="btn btn-primary reload jsSubmit">Save &amp; Add Another</button>
+                    <button type="submit" class="btn btn-info return jsSubmit">Save &amp; Done</button> &nbsp;
+
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+@section PageScript
+{
+    <script src="~/assets/node_modules/toast-master/js/jquery.toast.js"></script>
+    <script src="~/Content/app_script/page_script/team.js?version=@DateTime.Now"></script>
+}

@@ -1,0 +1,392 @@
+﻿@using Model_Layer.Models;
+@model Model_Layer.Models.Idea
+
+
+
+
+<div class="row">
+    <div class="col-lg-9 col-xlg-10 col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title" id="1">Your Idea</h4>
+
+
+
+                <form class="form-material m-t-40">
+                    <div class="form-group">
+                        <h5>What is your idea, try to explain as simply as possible</h5>
+                        <textarea class="form-control form-control-line detailtextarea" id="IdeaExplain" name="IdeaExplain" readonly>@Model.IdeaExplain</textarea>
+                        <input type="hidden" id="IdeaID" value="@Model.IdeaID" />
+
+
+                    </div>
+                </form>
+
+
+
+
+
+                <h4 class="card-title m-t-40" id="22">Lets break down the idea</h4>
+
+
+                <form class="form-material m-t-40">
+
+                    <div class="form-group">
+                        @{ var arrayStartupType = String.IsNullOrEmpty(@Model.IdeaBreakDown.StartupType) == false ? @Model.IdeaBreakDown.StartupType.Split(',').ToArray() : new string[0]; }
+                        <label>What type of start-up is it </label>
+                        @foreach (var item in ViewBag.MasterStartup)
+                        {
+                            if (Array.Exists(arrayStartupType, x => x == Convert.ToString(@item.ID)) == true)
+                            {<div class="custom-checkbox">
+                                    <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                    <label for="square-radio-disabled">@item.Value</label>
+                                </div>
+                            }
+
+
+
+
+
+                        }
+                    </div>
+
+
+                    <div class="form-group">
+                        @{ var arrayStartupTechnology = String.IsNullOrEmpty(@Model.IdeaBreakDown.StartupTechnology) == false ? @Model.IdeaBreakDown.StartupTechnology.Split(',').ToArray() : new string[0]; }
+                        <label>What technology will this start-up use </label>
+                        @foreach (var item in ViewBag.MasterTechnology)
+                        {
+                            if (Array.Exists(arrayStartupTechnology, x => x == Convert.ToString(@item.ID)) == true)
+                            {<div class=" custom-checkbox">
+                                    <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                    <label for="square-radio-disabled">@item.Value</label>
+                                </div>
+                            }
+
+
+
+
+                        }
+                    </div>
+
+
+                    <div class="form-group">
+                        <h5>What problem will this solve </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.ProblemSolve</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Who are you solving the problem for </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.ProblemSolver</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>What feedback have you received about your idea </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.FeedBackReceived</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Who was the feedback from </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.FeedBackFrom</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5> Is there a demand for your product? </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.FeedBackFrom</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Do you have a niche if so what is it </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.Niche</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Is there something on the market already </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.Niche</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Who already exists in this space </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.SpaceExist</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Is it scalable - If you got 100 customers on launch and 1000 the following week, could you handle it </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.Niche</textarea>
+
+                    </div>
+                </form>
+
+
+
+
+
+                <h4 class="card-title m-t-40" id="3">  About You</h4>
+                <form class="form-material m-t-40">
+                    <div class="form-group">
+                        <h5>Why do you want to become an entrepreneur</h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.AboutYou.Entrepreneur</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Can you see yourself doing this for years </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.AboutYou.YearsDoing</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>What is your experience why are you the person to make this a reality </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.AboutYou.Experience</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>What are your priorities in life </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.AboutYou.Priorities</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5> What is the end goal </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.EndGoalList) { if (@item.ID == @Model.AboutYou.EndGoal) { @item.Value} }</textarea>
+
+                    </div>
+
+                </form>
+                <h4 class="card-title m-t-40" id="4">The Company</h4>
+                <form class="form-material m-t-40">
+                    <div class="form-group">
+                        <h5>Do you have a company set up</h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.CompanySetupList) { if (@item.ID == @Model.Company.CompanySetup) { @item.Value} }</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>What is the name of the company </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.CompanyName</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Have you got the domain name </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.CompanySetupList) { if (@item.ID == @Model.Company.HaveGotDomain) { @item.Value} }</textarea>
+                    </div>
+                    <div class="form-group">
+                        <h5>What is the domain </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.DomainName</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Have you got a co-founder</h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.CofounderList) { if (@item.ID == @Model.Company.Cofounder) { @item.Value} }</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Have you got someone that can support technically</h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.SupportTechnicallyList) { if (@item.ID == @Model.Company.SupportTechnically) { @item.Value} }</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Who is going to build it</h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.BuildFromList) { if (@item.ID == @Model.Company.BuildFrom) { @item.Value} }</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Have you any thoughts on the brand that you want to create</h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.BrandThought</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Think about company mission what could it be.</h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.CompanyMission</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Think about look & feel, how will the user interact with the company.</h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.CompanyLookFeel</textarea>
+
+                    </div>
+                </form>
+                <h4 class="card-title m-t-40" id="5">Selling the Idea</h4>
+                <form class="form-material m-t-40">
+
+
+                    <div class="form-group">
+                        @{ var arraySellType = String.IsNullOrEmpty(@Model.IdeaSelling.SellType) == false ? @Model.IdeaSelling.SellType.Split(',').ToArray() : new string[0]; }
+                        <label>What are you selling </label>
+                        @foreach (var item in ViewBag.MasterSelling)
+                        {
+                            if (Array.Exists(arraySellType, x => x == Convert.ToString(@item.ID)) == true)
+                            {<div class="custom-checkbox">
+                                    <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                    <label for="square-radio-disabled">@item.Value</label>
+                                </div>
+                            }
+
+
+
+
+
+                        }
+                    </div>
+
+
+                    <div class="form-group">
+                        <h5>Who is going to buy the product </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaSelling.ProductBuy</textarea>
+
+                    </div>
+
+                    <div class="form-group">
+                        @{ var arrayProductCharge = String.IsNullOrEmpty(@Model.IdeaSelling.ProductCharge) == false ? @Model.IdeaSelling.ProductCharge.Split(',').ToArray() : new string[0]; }
+                        <label>How would you like to charge </label>
+                        @foreach (var item in ViewBag.MasterCharge)
+                        {
+                            if (Array.Exists(arrayProductCharge, x => x == Convert.ToString(@item.ID)) == true)
+                            {<div class=" custom-checkbox">
+                                    <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                    <label for="square-radio-disabled">@item.Value</label>
+                                </div>
+                            }
+
+
+
+
+                        }
+                    </div>
+
+
+                    <div class="form-group">
+                        <h5>How much are going to charge </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaSelling.ChargeGoing</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Who are you selling to </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.SellToList) { if (@item.ID == Convert.ToInt32(@Model.IdeaSelling.SellTo)) { @item.Value} }</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>How are you planning on finding customers </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaSelling.CustomerFindPlan</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Are you planning on taking on sales staff </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.SaleStaffPlanList) { if (@item.ID == @Model.IdeaSelling.SaleStaffPlan) { @item.Value} }</textarea>
+
+                    </div>
+                </form>
+                <h4 class="card-title m-t-40" id="6">The Money</h4>
+                <form class="form-material m-t-40">
+                    <div class="form-group">
+                        <h5><i class="ti-pencil-alt"></i> How much do you think it will cost to launch your business </h5>
+
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.BusinessCostLList) { if (@item.ID == @Model.Money.BusinessCost) { @item.Value} }</textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <h5>Can you afford that </h5>
+                        <textarea id="Affort" name="Affort" class="form-control detailtextarea" oninput="auto_grow_idea_textarea(this)"> @Model.Money.Affort</textarea>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+                        @{ var arrayMoneyRaisePlan = String.IsNullOrEmpty(@Model.Money.MoneyRaisePlan) == false ? @Model.Money.MoneyRaisePlan.Split(',').ToArray() : new string[0]; }
+                        <label>How are you planning to raise the money </label>
+                        @foreach (var item in ViewBag.MasterMoneyRasie)
+                        {
+                            if (Array.Exists(arrayMoneyRaisePlan, x => x == Convert.ToString(@item.ID)) == true)
+                            {<div class="custom-checkbox">
+                                    <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                    <label for="square-radio-disabled">@item.Value</label>
+                                </div>
+                            }
+
+
+
+                        }
+
+                    </div>
+
+
+
+
+
+
+
+                    <div class="form-group">
+                        <h5>Can you make it profitable </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly> @Model.Money.ProfitableMake</textarea>
+
+                    </div>
+
+                    <div class="form-group">
+                        <h5>How are you planning on finding customers </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaSelling.CustomerFindPlan</textarea>
+
+                    </div>
+
+                    <div class="form-group">
+                        <h5>How long before you think you will be profitable </h5>
+                        <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Money.ProfitableThinkTime</textarea>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xlg-2 col-md-4">
+        <div class="stickyside">
+            <div class="list-group" id="top-menu">
+                <a href="#1" class="list-group-item">
+                    Your Idea
+                    <div class="pull-right" style="text-align:right">@ViewBag.ProgressData.YourIdeaProgressData% <i class="fa fa-level-up text-success"></i></div>
+                    <div class="progress" style="height:auto">
+                        <div class="progress-bar bg-primary" id="IdeaProgress" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:@ViewBag.ProgressData.YourIdeaProgressData%; height: 6px;"> <span class="sr-only">@ViewBag.ProgressData.YourIdeaProgressData % Complete</span></div>
+                    </div>
+                </a>
+                <a href="#22" class="list-group-item">
+                    Lets break down the idea
+
+                    <div class="pull-left" style="text-align:right">@ViewBag.ProgressData.IdeaBreakDownProgressData% <i class="fa fa-level-up text-success"></i></div>
+                    <div class="progress" style="height:auto">
+                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:@ViewBag.ProgressData.IdeaBreakDownProgressData%; height: 6px;"> <span class="sr-only">@ViewBag.ProgressData.IdeaBreakDownProgressData% Complete</span></div>
+                    </div>
+                </a>
+                <a href="#3" class="list-group-item">
+                    About You
+                    <div class="pull-left" style="text-align:right">@ViewBag.ProgressData.AboutYouProgressData% <i class="fa fa-level-up text-success"></i></div>
+                    <div class="progress" style="height:auto">
+                        <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:@ViewBag.ProgressData.AboutYouProgressData%; height: 6px;"> <span class="sr-only">@ViewBag.ProgressData.AboutYouProgressData% Complete</span></div>
+                    </div>
+                </a>
+                <a href="#4" class="list-group-item">
+                    The Company
+                    <div class="pull-left" style="text-align:right">@ViewBag.ProgressData.CompanyProgressData% <i class="fa fa-level-up text-success"></i></div>
+                    <div class="progress" style="height:auto">
+                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:@ViewBag.ProgressData.CompanyProgressData%; height: 6px;"> <span class="sr-only">@ViewBag.ProgressData.CompanyProgressData% Complete</span></div>
+                    </div>
+                </a>
+                <a href="#5" class="list-group-item">
+                    Selling the Idea
+
+                    <div class="pull-left" style="text-align:right">@ViewBag.ProgressData.IdeaSellingProgressData% <i class="fa fa-level-up text-success"></i></div>
+                    <div class="progress" style="height:auto">
+                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:@ViewBag.ProgressData.IdeaSellingProgressData%; height: 6px;"> <span class="sr-only">@ViewBag.ProgressData.IdeaSellingProgressData% Complete</span></div>
+                    </div>
+                </a>
+                <a href="#6" class="list-group-item">
+                    The Money
+                    <div class="pull-left" style="text-align:right">@ViewBag.ProgressData.MoneyProgressData% <i class="fa fa-level-up text-success"></i></div>
+                    <div class="progress" style="height:auto">
+                        <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:@ViewBag.ProgressData.MoneyProgressData%; height: 6px;"> <span class="sr-only">@ViewBag.ProgressData.MoneyProgressData% Complete</span></div>
+                    </div>
+                </a>
+
+                @*<a href="#7" class="list-group-item">Title will be 7</a>
+                    <a href="#8" class="list-group-item">Title will be 8</a>
+                    <a href="#9" class="list-group-item">Title will be 9</a>
+                    <a href="#10" class="list-group-item">Title will be 10</a>*@
+            </div>
+        </div>
+    </div>
+</div>

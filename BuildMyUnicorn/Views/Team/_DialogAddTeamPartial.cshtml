@@ -1,0 +1,123 @@
+﻿
+<div id="dialogClientUpdate" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+            
+                <h4 class="modal-title" id="myModalLabel">Please Complete Profile</h4>
+            </div>
+            <form class="form-horizontal form-material" id="frm_UpdateClientProfile">
+                <input type="hidden" name="RoleInCompany" id="RoleInCompany" />
+                <input type="hidden" id="ImageID" name="ImageID" />
+                <div class="modal-body">
+                  
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Role at company   </label>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="839f0c8f-b5ce-4e17-bbe9-0b1c3b835dde" name="_RoleInCompany" value="839f0c8f-b5ce-4e17-bbe9-0b1c3b835dde">
+                                            <label class="custom-control-label" for="839f0c8f-b5ce-4e17-bbe9-0b1c3b835dde">Founder</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="8ea0dea8-9c94-454c-a175-3757ea4290f1" name="_RoleInCompany" value="8ea0dea8-9c94-454c-a175-3757ea4290f1">
+                                            <label class="custom-control-label" for="8ea0dea8-9c94-454c-a175-3757ea4290f1">Co Founder</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="cdb14b91-05c4-4054-a2e4-73133d879734" name="_RoleInCompany" value="cdb14b91-05c4-4054-a2e4-73133d879734">
+                                            <label class="custom-control-label" for="cdb14b91-05c4-4054-a2e4-73133d879734">Sales</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="f1110994-d667-4bb4-b856-b7220a2d17a2" name="_RoleInCompany" value="f1110994-d667-4bb4-b856-b7220a2d17a2">
+                                            <label class="custom-control-label" for="f1110994-d667-4bb4-b856-b7220a2d17a2">CEO</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="0c733131-159a-4e16-bf2f-c11de47fe96d" name="_RoleInCompany" value="0c733131-159a-4e16-bf2f-c11de47fe96d">
+                                            <label class="custom-control-label" for="0c733131-159a-4e16-bf2f-c11de47fe96d">COO</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="3d58636e-17e3-4d58-af56-f2f84f654f47" name="_RoleInCompany" value="3d58636e-17e3-4d58-af56-f2f84f654f47">
+                                            <label class="custom-control-label" for="3d58636e-17e3-4d58-af56-f2f84f654f47">CMO</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="84c5d93d-6bcf-464c-8784-111df68f81a6" name="_RoleInCompany" value="84c5d93d-6bcf-464c-8784-111df68f81a6">
+                                            <label class="custom-control-label" for="84c5d93d-6bcf-464c-8784-111df68f81a6">CTO</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="421eaf78-4856-4fd9-8637-4deec149b264" name="_RoleInCompany" value="421eaf78-4856-4fd9-8637-4deec149b264">
+                                            <label class="custom-control-label" for="421eaf78-4856-4fd9-8637-4deec149b264">Business Development</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="421eaf78-4856-4fd9-8637-4deec149b264" name="_RoleInCompany" value="421eaf78-4856-4fd9-8637-4deec149b264">
+                                            <label class="custom-control-label" for="421eaf78-4856-4fd9-8637-4deec149b264">CFO</label>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="wint1">Photograph</label>
+                                <div class="fileupload">
+
+                                    <div class="btn btn-default btn-file" style="position: relative; text-align:right">
+                                        <input type="button" class="btn btn-primary pull-right" style="display:inline !important" value="Choose File" />
+                                        <input type="file" id="ImageUpload" style="position: absolute;top: 0;right: 0;width: 100%;height: 100%;margin: 0;opacity: 0;">
+
+                                    </div>
+
+                                    <div class="dropzone" id="imagepreview" style="padding:5px;">
+                                        <div id="my_img" class="dz-preview dz-file-preview dz-error" style="position:relative;text-align:center"><img src="../Content/file_upload/profile-dummy.png" class="img-responsive img-thumbnail" /></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="wint1">Linked in Profile</label>
+                            <input type="text" class="form-control" id="LinkedProfile" name="LinkedProfile" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="wint1">Short Bio</label>
+                            <textarea class="form-control ideatextarea progress-required progress-percent" id="ShortBio" name="ShortBio" oninput="auto_grow_idea_textarea(this)" aria-invalid="false"> </textarea>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default waves-effect"
+                            data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary waves-effect">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

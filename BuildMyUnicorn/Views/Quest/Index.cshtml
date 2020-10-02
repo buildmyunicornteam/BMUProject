@@ -1,0 +1,170 @@
+﻿@section PageStyle
+{
+    @*<style>
+            caption, input, div.card-body li {
+                color: #000 !important;
+                text-align: left;
+            }
+        </style>*@
+    <link rel="stylesheet" href="https://surveyjs.azureedge.net/1.0.33/surveyeditor.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://surveyjs.azureedge.net/1.0.33/surveyeditor.css" />
+
+    <style>
+        .svd_commercial_container {
+            display: none
+        }
+    </style>
+
+
+}
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Questionaire</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Questionaire</li>
+            </ol>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div id="surveyEditorContainer"></div>
+                @*<div class="setDataWrap">
+                        <button id="getXML" type="button">Get XML Data</button>
+                        <button id="getJSON" type="button">Get JSON Data</button>
+                        <button id="getJS" type="button">Get JS Data</button>
+                    </div>
+                    <div class="saveDataWrap">
+                        <button id="saveData" type="button">External Save Button</button>
+                    </div>
+                    <div id="build-wrap"></div>
+                    <div class="render-wrap"></div>
+                    <button id="edit-form">Edit Form</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section PageScript
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="https://surveyjs.azureedge.net/1.0.33/survey.ko.min.js"></script>
+    <script src="https://surveyjs.azureedge.net/1.0.33/surveyeditor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/worker-json.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-json.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/worker-json.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+    <script>
+        //SurveyEditor.StylesManager.applyTheme("winter");
+        var editorOptions = {
+            // show the embeded survey tab. It is hidden by default
+            showEmbededSurveyTab: true,
+            // hide the test survey tab. It is shown by default
+            showTestSurveyTab: true,
+            // hide the JSON text editor tab. It is shown by default
+            showJSONEditorTab: true,
+            // show the "Options" button menu. It is hidden by default
+            showOptions: true
+        };
+        // pass the editorOptions into the constructor. It is an optional parameter.
+        var survey = new SurveyEditor.SurveyEditor(
+            "surveyEditorContainer",
+            editorOptions
+        );
+        //set function on save callback
+        editor.saveSurveyFunc = saveMySurvey;
+        function saveMySurvey() {
+            var yourNewSurveyJSON = editor.text;
+            //send updated json in your storage
+            alert(yourNewSurveyJSON);
+        }
+
+    </script>
+
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="https://formbuilder.online/assets/js/form-builder.min.js"></script>
+        <script>
+
+            jQuery(function ($) {
+                var container = document.getElementById('build-wrap');
+                var fields = [{
+                    label: 'Star Rating',
+                    attrs: {
+                        type: 'text'
+                    },
+                    icon: '🌟'
+                }];
+                var templates = {
+                    text: function (fieldData) {
+                        return {
+                            field: ' <input tye="text" valu="q"><span class="wikipedia" id="' + fieldData.name + '">',
+                            onRender: function () {
+                                $(document.getElementById(fieldData.name)).rateYo({
+                                    rating: 3.6
+                                });
+                            }
+                        };
+                    }
+                };
+                $(container).formBuilder({
+                    templates,
+                    fields
+                });
+
+                //const fbEditor = document.getElementById("build-wrap");
+                //const formBuilder = $(fbEditor).formBuilder();
+
+                document.getElementById("saveData").addEventListener("click", () => {
+                    console.log("external save clicked");
+                    const result = formBuilder.actions.save();
+                    console.log("result:", result);
+                });
+                document.getElementById('getXML').addEventListener('click', function () {
+                    alert(formBuilder.actions.getData('xml'));
+                });
+                document.getElementById('getJSON').addEventListener('click', function () {
+                    alert(formBuilder.actions.getData('json'));
+                });
+                document.getElementById('getJS').addEventListener('click', function () {
+                    alert('check console');
+                    console.log(formBuilder.actions.getData());
+                });
+            });
+
+
+            //jQuery(function ($) {
+            //    var fbTemplate = document.getElementById('build-wrap');
+            //    var options = {
+            //        disableFields: [
+            //            'autocomplete',
+            //            'file',
+            //            'date',
+            //            'paragraph'
+            //        ]
+            //    };
+            //    $(fbTemplate).formBuilder(options);
+            //});
+
+
+        </script>*@
+}

@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    <script type="text/javascript">
+
+
+        function GetBaseURL() {
+            var baseUrl;
+            baseUrl = '@VirtualPathUtility.ToAbsolute("~/")';
+            return baseUrl;
+        }
+
+        function changeFormAction(_controller, _action) {
+            var newformAction = '@VirtualPathUtility.ToAbsolute("~/")' + _controller + '/' + _action;
+            return newformAction;
+        }
+
+    </script>
+
+}

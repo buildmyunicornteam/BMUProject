@@ -1,0 +1,112 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Build My Unicorn - Login</title>
+    <link href="~/Content/app_css/bootstrap-4.4.1.css" rel="stylesheet" />
+    <link href="~/Content/app_css/style.css" rel="stylesheet" />
+</head>
+<body class="login-bg">
+    <div class="container">
+        <div class="login-container">
+
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="m-xl-5">
+                        <div class="mb-3 mb-md-4 mb-lg-5 text-center text-xl-left"><img src="~/Content/images/buil-my-unicorn-logo.png" alt="Build My Unicorn Logo" class="img-fluid logo"></div>
+                        <h2>Build my Unicorn is here to help you start your startup, by offering guidance and support from industry experts and software that will make the process simple. We will be your one stop shop for everything you need.</h2>
+                        <hr>
+                        <p class="lead">Brought to you by Varistha Limited  <a href="https://www.varistha.co.uk/" target="_blank">varistha.co.uk</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="" id="signup">
+                                <p class=""><span class="badge badge-pill badge-success">Step 2</span> of 2</p>
+                                <h1 class="">Payments</h1>
+                                <div class="card mt-0 mb-5 px-3 py-0 bg-light">
+                                    <div class="card-body">
+                                        <p class="mb-2 text-uppercase">Subscription Price</p>
+                                        <h2 class="mb-0">£ 9.95 <small>Per Month</small></h2>
+                                    </div>
+                                </div>
+
+                                <form class="mt-2 mb-mt-3 mt-lg-4 ">
+                                    <div class="form-group">
+                                        <label for="">Name on Card</label>
+                                        <input type="text" class="form-control" id="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Card Number <img src="images/lock.png" alt=""></label>
+                                        <input type="text" class="form-control" id="">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="">Expiry Date</label>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="">Month</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="">&nbsp;</label>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="">Year</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Security Code <img src="images/lock.png" alt=""></label> <span class="float-right" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus sagittis lacus vel augue laoreet rutrum."><img src="images/info-icon-fill.png" alt="" width=""></span>
+                                        <input type="text" class="form-control" id="">
+                                    </div>
+                                    <div class="mb-4">
+                                        By clicking Create My Account, you are agreeing to the <a href="https://www.buildmyunicorn.com/" target="_blank">terms of service</a> and the <a href="https://www.buildmyunicorn.com/" target="_blank">privacy policy</a>.
+                                    </div>
+                                    <hr>
+                                    <div class="mt-4"><a href="signup-success.html" class="btn btn-primary btn-signup btn-block">Create My Account</a></div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="../../code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-3.4.1.min.js"><\/script>')</script>
+    <script src="../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+
+    <script>
+		$(function () {
+		  $('[data-toggle="popover"]').popover()
+		})
+		$('body').on('click', function (e) {
+			$('[data-toggle=popover]').each(function () {
+				// hide any open popovers when the anywhere else in the body is clicked
+				if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+					$(this).popover('hide');
+				}
+			});
+		});
+    </script>
+</body>
+
+</html>
+
+

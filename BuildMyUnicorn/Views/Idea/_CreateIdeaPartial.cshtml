@@ -1,0 +1,449 @@
+﻿@using Model_Layer.Models;
+@model Model_Layer.Models.Idea
+
+<div class="row" id="validation">
+    <div class="col-9">
+        <div class="card wizard-content">
+            <div class="card-body">
+                @*<h4 class="card-title">Step wizard with validation</h4>
+
+                    <h6 class="card-subtitle">You can us the validation like what we did</h6>*@
+                <div id="markupContainer"> </div>
+                <form id="IdeaForm" method="post" class="validation-wizard wizard-circle">
+                    <input type="hidden" id="jsIdea" value='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))' />
+                    <input type="hidden" id="ActionType" value="@ViewBag.ActionType" />
+                    <input type="hidden" id="IdeaID" name="IdeaID" value="@Model.IdeaID" />
+                    <input type="hidden" id="ProgressValue" name="ProgressValue" value="@Model.ProgressValue" />
+                    <!-- Step 1 -->
+                    <h6>The Idea</h6>
+                    <section>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">What is your idea, try to explain as simply as possible.</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.IdeaExplain != null ? "progress-percent" : "")' id="IdeaExplain" name="IdeaExplain" oninput="auto_grow_idea_textarea(this)">@Model.IdeaExplain</textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- Step 2 -->
+                    <h6>Lets break down the idea</h6>
+                    <section>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @{ var arrayStartupType = String.IsNullOrEmpty(@Model.IdeaBreakDown.StartupType) == false ? @Model.IdeaBreakDown.StartupType.Split(',').ToArray() : new string[0]; }
+                                    <label>What type of start-up is it  </label>
+                                    <input type="hidden" id="_StartupType" name="_StartupType" class='progress-required @( arrayStartupType.Length > 0 ? "progress-percent" : "")' value="" />
+                                    @foreach (var item in ViewBag.MasterStartup)
+                                    {
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="@item.ID" name="StartupType" value="@item.ID" @(Array.Exists(arrayStartupType, x => x == Convert.ToString(item.ID)) == true ? "checked=Checked" : "")>
+                                            <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                        </div>
+
+                                    }
+
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @{ var arrayStartupTechnology = String.IsNullOrEmpty(@Model.IdeaBreakDown.StartupTechnology) == false ? @Model.IdeaBreakDown.StartupTechnology.Split(',').ToArray() : new string[0]; }
+                                    <label>What technology will this start-up use </label>
+                                    <input type="hidden" id="_StartupTechnology" name="_StartupTechnology" class='progress-required @( arrayStartupTechnology.Length > 0 ? "progress-percent" : "")' value="" />
+                                    @foreach (var item in ViewBag.MasterTechnology)
+                                    {
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="@item.ID" name="StartupTechnology" value="@item.ID" @(Array.Exists(arrayStartupTechnology, x => x == Convert.ToString(item.ID)) == true ? "checked=Checked" : "")>
+                                            <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                        </div>
+
+
+                                    }
+
+
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">What problem will this solve</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.IdeaBreakDown.ProblemSolve != null ? "progress-percent" : "")' id="ProblemSolve" name="ProblemSolve" oninput="auto_grow_idea_textarea(this)"> @Model.IdeaBreakDown.ProblemSolve</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Who are you solving the problem for</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.IdeaBreakDown.ProblemSolver != null ? "progress-percent" : "")' id="ProblemSolver" name="ProblemSolver" oninput="auto_grow_idea_textarea(this)">  @Model.IdeaBreakDown.ProblemSolver </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">What feedback have you received about your idea</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.IdeaBreakDown.FeedBackReceived != null ? "progress-percent" : "")' id="FeedBackReceived" name="FeedBackReceived" oninput="auto_grow_idea_textarea(this)">   @Model.IdeaBreakDown.FeedBackReceived </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Who was the feedback from</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.IdeaBreakDown.FeedBackFrom != null ? "progress-percent" : "")' id="FeedBackFrom" name="FeedBackFrom" oninput="auto_grow_idea_textarea(this)">  @Model.IdeaBreakDown.FeedBackFrom </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Is there a demand for your product?</label>
+                                    @{ var ProductDemandClass = Model.IdeaBreakDown.ProductDemand != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("ProductDemand", new SelectList(ViewBag.ProductDemandList, "ID", "Value", @Model.IdeaBreakDown.ProductDemand), "- Please select -", new { @class = "custom-select col-12 " + @ProductDemandClass + " progress-required" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Do you have a niche if so what is it</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.IdeaBreakDown.Niche != null ? "progress-percent" :"")' id="Niche" name="Niche" oninput="auto_grow_idea_textarea(this)"> @Model.IdeaBreakDown.Niche </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Is there something on the market already</label>
+                                    @{ var InMarketAlreadyClass = Model.IdeaBreakDown.InMarketAlready != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("InMarketAlready", new SelectList(ViewBag.InMarketAlreadyList, "ID", "Value", @Model.IdeaBreakDown.InMarketAlready), "- Please select -", new { @class = "custom-select col-12 " + @InMarketAlreadyClass + " progress-required" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Who already exists in this space</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.IdeaBreakDown.SpaceExist != null ? "progress-percent" :"")' id="SpaceExist" name="SpaceExist" oninput="auto_grow_idea_textarea(this)">  @Model.IdeaBreakDown.SpaceExist </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Is it scalable - If you got 100 customers on launch and 1000 the following week, could you handle it </label>
+                                    @{ var ScalableClass = Model.IdeaBreakDown.Scalable != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("Scalable", new SelectList(ViewBag.ScalableList, "ID", "Value", @Model.IdeaBreakDown.Scalable), "- Please select -", new { @class = "custom-select col-12 " + @ScalableClass + " progress-required" })
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Step 3 -->
+                    <h6>About You</h6>
+                    <section>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Why do you want to become an entrepreneur</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.AboutYou.Entrepreneur != null ? "progress-percent" :"")' id="Entrepreneur" name="Entrepreneur" oninput="auto_grow_idea_textarea(this)">  @Model.AboutYou.Entrepreneur </textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Can you see yourself doing this for years</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.AboutYou.YearsDoing != null ? "progress-percent" :"")' id="YearsDoing" name="YearsDoing" oninput="auto_grow_idea_textarea(this)"> @Model.AboutYou.YearsDoing </textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>What is your experience why are you the person to make this a reality</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.AboutYou.Experience != null ? "progress-percent" :"")' id="Experience" name="Experience" oninput="auto_grow_idea_textarea(this)"> @Model.AboutYou.Experience </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>What are your priorities in life</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.AboutYou.Priorities != null ? "progress-percent" :"")' id="Priorities" name="Priorities" oninput="auto_grow_idea_textarea(this)"> @Model.AboutYou.Priorities </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>What is the end goal  </label>
+                                    @{ var EndGoalClass = Model.AboutYou.EndGoal != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("EndGoal", new SelectList(ViewBag.EndGoalList, "ID", "Value", @Model.AboutYou.EndGoal), "- Please select -", new { @class = "custom-select col-12 " + @EndGoalClass + " progress-required" })
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- Step 4 -->
+                    <h6>The Company</h6>
+                    <section>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Do you have a company set up</label>
+                                    @{ var CompanySetupClass = Model.Company.CompanySetup != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("CompanySetup", new SelectList(ViewBag.CompanySetupList, "ID", "Value", @Model.Company.CompanySetup), "- Please select -", new { @class = "custom-select col-12 " + @CompanySetupClass + " progress-required" })
+
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">What is the name of the company</label>
+                                    <input type="text" class='form-control  progress-required @( Model.Company.CompanyName != null ? "progress-percent" :"")' id="CompanyName" name="CompanyName" value="@Model.Company.CompanyName"/>
+                                    @*<textarea class='form-control ideatextarea progress-required @( Model.Company.CompanyName != null ? "progress-percent" :"")' id="CompanyName" name="CompanyName" oninput="auto_grow_idea_textarea(this)">  @Model.Company.CompanyName</textarea>*@
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Have you got the domain name</label>
+                                    @{ var HaveGotDomainClass = Model.Company.HaveGotDomain != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("HaveGotDomain", new SelectList(ViewBag.CompanySetupList, "ID", "Value", @Model.Company.HaveGotDomain), "- Please select -", new { @class = "custom-select col-12 " + @HaveGotDomainClass + " progress-required" })
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">What is the domain</label>
+                                    <input type="text" class='form-control  progress-required @( Model.Company.DomainName != null ? "progress-percent" :"")' id="DomainName" name="DomainName">
+                                    @*<textarea class='form-control ideatextarea progress-required @( Model.Company.DomainName != null ? "progress-percent" :"")' id="DomainName" name="DomainName" oninput="auto_grow_idea_textarea(this)">  @Model.Company.DomainName </textarea>*@
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Have you got a co-founder</label> <br />
+                                    @{ var CofounderClass = Model.Company.Cofounder != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("Cofounder", new SelectList(ViewBag.CofounderList, "ID", "Value", @Model.Company.Cofounder), "- Please select -", new { @class = "custom-select col-12 " + @CofounderClass + " progress-required" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Have you got someone that can support technically</label>
+                                    @{ var SupportTechnicallyClass = Model.Company.SupportTechnically != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("SupportTechnically", new SelectList(ViewBag.SupportTechnicallyList, "ID", "Value", @Model.Company.SupportTechnically), "- Please select -", new { @class = "custom-select col-12 " + @SupportTechnicallyClass + " progress-required" })
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Who is going to build it</label>
+                                    @{ var BuildFromClass = Model.Company.BuildFrom != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("BuildFrom", new SelectList(ViewBag.BuildFromList, "ID", "Value", @Model.Company.BuildFrom), "- Please select -", new { @class = "custom-select col-12 " + @BuildFromClass + " progress-required" })
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Have you any thoughts on the brand that you want to create</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.Company.BrandThought != null ? "progress-percent" :"")' id="BrandThought" name="BrandThought" oninput="auto_grow_idea_textarea(this)"> @Model.Company.BrandThought </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Think about company mission what could it be.</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.Company.CompanyMission != null ? "progress-percent" :"")' id="CompanyMission" name="CompanyMission" oninput="auto_grow_idea_textarea(this)">  @Model.Company.CompanyMission</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Think about look & feel, how will the user interact with the company.</label>
+                                    <textarea class='form-control ideatextarea progress-required @( Model.Company.CompanyLookFeel != null ? "progress-percent" :"")' id="CompanyLookFeel" name="CompanyLookFeel" oninput="auto_grow_idea_textarea(this)"> @Model.Company.CompanyLookFeel </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Step 4 -->
+                    <h6>Selling the Idea</h6>
+                    <section>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @{ var arraySellType = String.IsNullOrEmpty(@Model.IdeaSelling.SellType) == false ? @Model.IdeaSelling.SellType.Split(',').ToArray() : new string[0]; }
+                                <div class="form-group">
+                                    <label>What are you selling </label>
+                                    <input type="hidden" id="_SellType" name="_SellType" class='progress-required @( arraySellType.Length > 0 ? "progress-percent" : "")' value="" />
+                                    @foreach (var item in ViewBag.MasterSelling)
+                                    {
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="@item.ID" name="SellType" value="@item.ID" @(Array.Exists(arraySellType, x => x == Convert.ToString(item.ID)) == true ? "checked=Checked" : "")>
+                                            <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                        </div>
+
+                                    }
+
+
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="decisions1">Who is going to buy the product</label>
+                                    <textarea id="ProductBuy" name="ProductBuy" class='form-control ideatextarea progress-required @( Model.IdeaSelling.ProductBuy != null ? "progress" :"")' oninput="auto_grow_idea_textarea(this)"> @Model.IdeaSelling.ProductBuy </textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <div class="form-group">
+                                    @{ var arrayProductCharge = String.IsNullOrEmpty(@Model.IdeaSelling.ProductCharge) == false ? @Model.IdeaSelling.ProductCharge.Split(',').ToArray() : new string[0]; }
+
+                                    <label>How would you like to charge  </label>
+                                    <input type="hidden" id="_ProductCharge" name="_ProductCharge" class='progress-required @( arrayProductCharge.Length > 0 ? "progress-percent" : "")' value="" />
+                                    @foreach (var item in ViewBag.MasterCharge)
+                                    {
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="@item.ID" name="ProductCharge" value="@item.ID" @(Array.Exists(arrayProductCharge, x => x == Convert.ToString(item.ID)) == true ? "checked=Checked" : "")>
+                                            <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                        </div>
+
+                                    }
+
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="decisions1">How much are going to charge</label>
+                                    <textarea id="ChargeGoing" name="ChargeGoing" class='form-control ideatextarea progress-required @( Model.IdeaSelling.ChargeGoing != null ? "progress-percent" :"")' oninput="auto_grow_idea_textarea(this)"> @Model.IdeaSelling.ChargeGoing</textarea>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+
+                                <div class="form-group">
+                                    <label for="wint1"> Who are you selling to</label>
+                                    @{ var SellToClass = Model.IdeaSelling.SellTo != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("SellTo", new SelectList(ViewBag.SellToList, "ID", "Value", @Model.IdeaSelling.SellTo), "- Please select -", new { @class = "custom-select col-12 " + @SellToClass + " progress-required" })
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">How are you planning on finding customers</label>
+                                    <textarea id="CustomerFindPlan" name="CustomerFindPlan" class='form-control ideatextarea progress-required @( Model.IdeaSelling.CustomerFindPlan != null ? "progress-percent" :"")' oninput="auto_grow_idea_textarea(this)"> @Model.IdeaSelling.CustomerFindPlan</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1"> Are you planning on taking on sales staff</label>
+                                    @{ var SaleStaffPlanClass = Model.IdeaSelling.SaleStaffPlan != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("SaleStaffPlan", new SelectList(ViewBag.SaleStaffPlanList, "ID", "Value", @Model.IdeaSelling.SaleStaffPlan), "- Please select -", new { @class = "custom-select " + SaleStaffPlanClass + " col-12 progress-required" })
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Step 4 -->
+                    <h6>The Money</h6>
+                    <section>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">How much do you think it will cost to launch your business  </label>
+                                    @{ var BusinessCostClass = Model.Money.BusinessCost != null ? "progress-percent" : ""; }
+                                    @Html.DropDownList("BusinessCost", new SelectList(ViewBag.BusinessCostLList, "ID", "Value", @Model.Money.BusinessCost), "- Please select -", new { @class = "custom-select col-12 " + @BusinessCostClass + " progress-required" })
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="wint1">Can you afford that</label>
+                                    <textarea id="Affort" name="Affort" class='form-control ideatextarea progress-required @( Model.Money.Affort != null ? "progress-percent" :"")' oninput="auto_grow_idea_textarea(this)"> @Model.Money.Affort</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @{ var arrayMoneyRaisePlan = String.IsNullOrEmpty(@Model.Money.MoneyRaisePlan) == false ? @Model.Money.MoneyRaisePlan.Split(',').ToArray() : new string[0]; }
+
+                                    <label>How are you planning to raise the money </label>
+                                    <input type="hidden" id="_MoneyRaisePlan" name="_MoneyRaisePlan" class='progress-required @( arrayMoneyRaisePlan.Length > 0 ? "progress-percent" : "")' value="" />
+                                    @foreach (var item in ViewBag.MasterMoneyRasie)
+                                    {
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="@item.ID" name="MoneyRaisePlan" value="@item.ID" @(Array.Exists(arrayMoneyRaisePlan, x => x == Convert.ToString(item.ID)) == true ? "checked=Checked" : "")>
+                                            <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                        </div>
+
+                                    }
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Can you make it profitable</label>
+                                    <textarea id="ProfitableMake" name="ProfitableMake" class='form-control ideatextarea progress-required @( Model.Money.ProfitableMake != null ? "progress-percent" :"")' oninput="auto_grow_idea_textarea(this)">@Model.Money.ProfitableMake</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>How long before you think you will be profitable</label>
+                                    <textarea id="ProfitableThinkTime" name="ProfitableThinkTime" class='form-control ideatextarea progress-required @( Model.Money.ProfitableThinkTime != null ? "progress-percent" :"")' oninput="auto_grow_idea_textarea(this)">@Model.Money.ProfitableThinkTime</textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+       
+       
+       
+            <div class="thumbnail" data-toggle="modal" data-target="#myModal" style="position:relative;">
+            
+                    <img src="https://img.youtube.com/vi/b6hHqc0jpjo/0.jpg" class="img-thumbnail" alt="Lights" style="width:100%">
+                    <div class="caption">
+                        <p class="youtube-icon" ><i class="fab fa-youtube"></i></p>
+                    </div>
+               
+            </div>
+        </div>
+   
+</div>
+
+<div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Starting a start up: How to start</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="cartoonVideo" width="560" height="315" src="https://www.youtube.com/embed/b6hHqc0jpjo?autoplay=1" auto frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+@*<a class="popup-youtube btn btn-danger" href="www.youtube.com/watch?v=sK7riqg2mr4"><img src="../assets/images/big/img3.jpg" alt="image" class="img-responsive"></a>*@

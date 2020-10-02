@@ -1,0 +1,99 @@
+﻿@section PageStyle
+{
+    <link href="/assets/node_modules/kendoui/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="/assets/node_modules/kendoui/styles/kendo.flat.min.css" rel="stylesheet" />
+    <link href="/assets/node_modules/kendoui/styles/kendo.flat.mobile.min.css" rel="stylesheet" />
+
+}
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Manage Charge</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Masters</a></li>
+                <li class="breadcrumb-item active">Manage Miney Raise </li>
+            </ol>
+
+            <button type="button" data-toggle="modal" data-target="#add-startup-modal" class="btn btn-info d-none d-lg-block m-l-15 JsUpdateIdea"> Add New </button>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<div id="StartupGrid"></div>
+
+<div id="add-startup-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="newStartupForm" method="post">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add New Charge</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Starup:</label>
+                        <input type="text" class="form-control" name="Value" data-parsley-required="true" data-parsley-required-message="Please Enter Startup" />
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Dispaly Order:</label>
+                        <input type="text" class="form-control" name="DisplayOrder">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="Edit-startup-modal" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="editStartupForm" method="post">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit  Charge</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Starup:</label>
+                        <input type="text" class="form-control" id="Value" name="Value" data-parsley-required="true" data-parsley-required-message="Please Enter Startup" />
+                        <input type="hidden" id="ID" name="ID" value="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Dispaly Order:</label>
+                        <input type="text" class="form-control" id="DisplayOrder" name="DisplayOrder">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section PageScript
+{
+    <script src="/assets/node_modules/kendoui/js/kendo.all.min.js"></script>
+    <script src="/assets/node_modules/kendoui/js/jszip.min.js"></script>
+    <script src="~/assets/node_modules/parsely/parsley.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Content/page_script/charge.js?version=@DateTime.Now"></script>
+}
