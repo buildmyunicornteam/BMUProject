@@ -72,18 +72,18 @@
                     <div class="col-md-8 col-lg-9">
                         <h3 class="box-title m-b-0">@item.FirstName  @item.LastName </h3>
                         @{ var arrayRoles = String.IsNullOrEmpty(item.RoleInCompany) == false ? item.RoleInCompany.Split(',').ToArray() : new string[0];
-                                List<string> roleArray = new List<string>();
-                            }
-                            @foreach (var role in ViewBag.Role)
+                            List<string> roleArray = new List<string>();
+                        }
+                        @foreach (var role in ViewBag.Role)
+                        {
+                            if (Array.Exists(arrayRoles, x => x == Convert.ToString(@role.ID)) == true)
                             {
-                                if (Array.Exists(arrayRoles, x => x == Convert.ToString(@role.ID)) == true)
-                                {
-                                    roleArray.Add(@role.Value);
-                                }
+                                roleArray.Add(@role.Value);
                             }
-                        
-                         @string.Join(", ", roleArray.ToArray())
-                       
+                        }
+
+                        @string.Join(", ", roleArray.ToArray())
+
                         <address>
                             <abbr title="Phone"><i class="fas fa-phone-square"></i></abbr> @item.Phone
                             <br />

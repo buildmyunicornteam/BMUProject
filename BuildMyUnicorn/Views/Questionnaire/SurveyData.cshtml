@@ -1,0 +1,78 @@
+﻿@using Model_Layer.Models;
+@model IEnumerable<SurveyData>
+
+@section PageStyle
+{
+
+}
+@{
+
+    List<int> SurveyUnitIDList = Model.Select(o => o.SurveyUnitID).Distinct().ToList();
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor"><a href="~/Questionnaire"><i class="mdi mdi-arrow-left"></i>Back to Questionnaire</a></h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Questionnaire</li>
+                <li class="breadcrumb-item active">SurveyData</li>
+            </ol>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    @foreach (var unit in SurveyUnitIDList)
+    {
+        int index = 1;
+        var DataModel = Model.Where(o => o.SurveyUnitID == unit).ToList();
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Date :- <code> @DataModel[0].CreatedDateTime.ToString("d") </code> </h4>
+
+                    <div class="table-responsive">
+                        <div class="table table-bordered">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Question</th>
+                                        <th>Answer</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in DataModel)
+                                    {
+                                        <tr>
+                                            <td>@index   @{ index++; }</td>
+                                            <td>@item.KeyField</td>
+                                            <td>@item.KeyValue</td>
+
+
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>
+@section PageScript
+{
+
+
+}

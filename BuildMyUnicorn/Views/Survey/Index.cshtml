@@ -1,0 +1,190 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Build My Unicorn  - Signin </title>
+
+    <!-- page css -->
+    <link href="~/dist/css/pages/login-register-lock.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/dist/css/style.min.css" rel="stylesheet">
+    <link href="~/dist/css/custom-style.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/formiojs@3.9.0/dist/formio.full.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" />
+    <style>
+        body {
+            color: #000;
+        }
+
+        .container {
+            padding-right: 1px;
+            padding-left: 1px;
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+
+        .topbar .top-navbar {
+            min-height: 50px !important;
+            padding: 0;
+        }
+
+        .navbar {
+            position: relative;
+            min-height: 50px;
+            margin-bottom: -18px;
+            border: 0px solid transparent;
+        }
+
+        .drag-container {
+            padding: 10px;
+            border: dotted 2px #e8e8e8;
+            background: #fff;
+        }
+
+        .btn {
+            color: #000;
+        }
+
+        .formio-form {
+            position: relative;
+            min-height: 80px;
+            background: #fff;
+            padding: 5px;
+        }
+
+        .card-body {
+            background: #fff;
+        }
+
+        .btn-secondary {
+            border-color: #4F5467 !important;
+            color: #fff !important;
+        }
+
+        .btn-circle {
+            border-radius: 100% !important;
+            width: 40px !important;
+            height: 40px !important;
+            padding: 10px !important;
+        }
+        .login-box {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .body {
+          
+            overflow: scroll;
+        }
+    </style>
+
+    <style>
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #353b47 inset !important;
+        }
+        /*Change text in autofill textbox*/
+        input:-webkit-autofill {
+            -webkit-text-fill-color: #fff !important;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Build My Unicorn</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+   
+        <div class="login-box card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-2"> </div>
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <input type="hidden" id="SurveyID" value="@ViewBag.obj.SurveyID"/>
+                                    <input type="hidden" id="SurveyForm" value="@ViewBag.obj.SurveyForm" />
+                                    <h1>@ViewBag.obj.SurveyTitle</h1>
+                                    <div id="formio"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+   
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="~/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/assets/node_modules/popper/popper.min.js"></script>
+    <script src="~/assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="~/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="~/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/dist/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="~/assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="~/assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+    <!--Custom JavaScript -->
+    <!-- icheck -->
+    <script src="~/assets/node_modules/icheck/icheck.min.js"></script>
+    <script src="~/assets/node_modules/icheck/icheck.init.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/assets/node_modules/ion-rangeslider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+    <script src="~/assets/node_modules/ion-rangeslider/js/ion-rangeSlider/ion.rangeSlider-init.js"></script>
+    <script src="~/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/dist/js/custom.js"></script>
+
+    <script src="https://unpkg.com/formiojs@3.9.0/dist/formio.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+    <script src="~/Content/app_script/page_script/survey.js?version=@DateTime.Now"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+

@@ -89,6 +89,38 @@ namespace BuildMyUnicorn.Business_Layer
            
         }
 
+        public string AddClientSurvey(Survey Model)
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() {
+                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@SurveyTitle", ParamterValue = Model.SurveyTitle, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@SurveyForm", ParamterValue = Model.SurveyForm, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@CreatedBy", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input }
+            };
+            int result = obj.ExecuteWithReturnValue(CommandType.StoredProcedure, "sp_add_client_survey", parameters);
+            return result > 0 ? "OK" : "Error in Adding Survey";
+
+
+        }
+
+        public void AddSurveyData(List<SurveyData> ModelList, Guid SurveyID)
+        {
+             DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            //List<ParametersCollection> parameters = new List<ParametersCollection>() {
+            //    new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
+            //    new ParametersCollection { ParamterName = "@SurveyTitle", ParamterValue = Model.SurveyTitle, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+            //    new ParametersCollection { ParamterName = "@SurveyForm", ParamterValue = Model.SurveyForm, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+            //    new ParametersCollection { ParamterName = "@CreatedBy", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input }
+            //};
+            ModelList.ForEach(x => x.SurveyDataID = new Guid());
+            ModelList.ForEach(x => x.SurveyID = SurveyID);
+            ModelList.ForEach(x => x.CreatedDateTime = DateTime.Now);
+            DataTable dtSurveyData = Extensions.ListToDataTable(ModelList);
+            obj.ExecuteBulkInsert("sp_add_survey_data", dtSurveyData, "UT_Survey_Data", "@DataTable");
+   }
+
+
         public Client GetClient(int ClientID)
         {
             DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
@@ -103,6 +135,26 @@ namespace BuildMyUnicorn.Business_Layer
             return obj.GetList<ClientTeam>(CommandType.StoredProcedure, "sp_get_client_team", parameters);
         }
 
+        public IEnumerable<Survey> GetClientAllSurveyForm()
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() { new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input } };
+            return obj.GetList<Survey>(CommandType.StoredProcedure, "sp_get_client_all_survey", parameters);
+        }
+
+        public Survey GetClientSurveyForm(Guid SurveyID)
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() { new ParametersCollection { ParamterName = "@SurveyID", ParamterValue = SurveyID, ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input } };
+            return obj.GetSingle<Survey>(CommandType.StoredProcedure, "sp_get_client_survey", parameters);
+        }
+
+        public IEnumerable<SurveyData>  GetSurveyData(Guid SurveyID)
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() { new ParametersCollection { ParamterName = "@SurveyID", ParamterValue = SurveyID, ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input } };
+            return obj.GetList<SurveyData>(CommandType.StoredProcedure, "sp_get_survey_data", parameters);
+        }
         public string UpdateClientProfile(Client Model)
         {
             DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
@@ -174,6 +226,14 @@ namespace BuildMyUnicorn.Business_Layer
             new ParametersCollection { ParamterName = "@id", ParamterValue = Model.ConfirmationID, ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input }};
             obj.Execute(CommandType.StoredProcedure, "sp_update_forgot_password", parameters);
 
+        }
+
+        public string UpdateSurveyStatus(Guid SurveyID)
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() { new ParametersCollection { ParamterName = "@SurveyID", ParamterValue = SurveyID, ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input } };
+            int result = obj.ExecuteWithReturnValue(CommandType.StoredProcedure, "sp_update_survey_active_status", parameters);
+            return result > 0 ? "OK" : "Error in Survey Active/Inactive";
         }
 
         public string ValidateCustomerLogin(Client Model)
@@ -396,6 +456,14 @@ namespace BuildMyUnicorn.Business_Layer
             {
                 return "Email is not registered";
             }
+        }
+
+        public string DeleteSurvey(Guid SurveyID)
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() { new ParametersCollection { ParamterName = "@SurveyID", ParamterValue = SurveyID, ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input } };
+            int result =  obj.ExecuteWithReturnValue(CommandType.StoredProcedure, "sp_delete_client_survey", parameters);
+            return result > 0 ? "OK" : "Error in Delete";
         }
 
 

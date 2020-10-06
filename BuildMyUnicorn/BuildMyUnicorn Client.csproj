@@ -167,6 +167,7 @@
     <Compile Include="Controllers\QuestController.cs" />
     <Compile Include="Controllers\QuestionnaireController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3991,6 +3992,7 @@
     <Content Include="Content\app_script\page_script\questionnaire.js" />
     <Content Include="Content\app_script\page_script\shared.js" />
     <Content Include="Content\app_script\page_script\signup.js" />
+    <Content Include="Content\app_script\page_script\survey.js" />
     <Content Include="Content\app_script\page_script\team.js" />
     <Content Include="Content\app_script\parsley.js" />
     <Content Include="Content\app_script\tstfile.js" />
@@ -4119,9 +4121,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Simple-Plain-Bar-Chart-Plugin-With-jQuery-barCharts\index.html" />
-    <Content Include="Simple-Plain-Bar-Chart-Plugin-With-jQuery-barCharts\jquery.barChart.js" />
-    <Content Include="Simple-Plain-Bar-Chart-Plugin-With-jQuery-barCharts\jquery.barCharts.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -6102,8 +6101,6 @@
     <Content Include="Views\Register\_BadRequest.cshtml" />
     <Content Include="Views\Idea\_CreateIdeaPartial.cshtml" />
     <Content Include="Views\Idea\_DetailIdeaPartial.cshtml" />
-    <Content Include="Simple-Plain-Bar-Chart-Plugin-With-jQuery-barCharts\LICENSE" />
-    <Content Include="Simple-Plain-Bar-Chart-Plugin-With-jQuery-barCharts\README.md" />
     <Content Include="Views\Team\Index.cshtml" />
     <Content Include="Views\Team\_DialogAddTeamPartial.cshtml" />
     <Content Include="Views\Team\Create.cshtml" />
@@ -6111,6 +6108,11 @@
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Questionnaire\Index.cshtml" />
     <Content Include="Views\Quest\Index.cshtml" />
+    <Content Include="Views\Survey\Index.cshtml" />
+    <Content Include="Views\Questionnaire\_QuestionnairePartial.cshtml" />
+    <Content Include="Views\Questionnaire\Create.cshtml" />
+    <Content Include="Views\Questionnaire\SurveyData.cshtml" />
+    <Content Include="Views\Shared\_BadRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="assets\node_modules\kendoui\typescript\kendo.all.d.ts" />
