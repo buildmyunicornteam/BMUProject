@@ -35,7 +35,7 @@ namespace BuildMyUnicorn.Controllers
         public ActionResult GetSurveyData(string surveyID)
         {
             IEnumerable<SurveyData> modelList = new ClientManager().GetSurveyData(Guid.Parse(surveyID));  
-            return View(modelList);
+            return View("SurveyData",modelList);
         }
 
         //public JsonResult GetClientIdeaProgressData()
