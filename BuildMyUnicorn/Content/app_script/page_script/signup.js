@@ -1,10 +1,27 @@
-﻿bind_Country();
+﻿$(function () {
+    $(".preloader").fadeOut();
+    $.ajax({
+        url: GetBaseURL() + "Register/GetCountryList",
+        type: 'GET',
+        dataType: 'json',
+        success: function (res) {
+            console.log(res);
+
+            var options = "<option value=''>--Select your Country--</option>";
+            $.each(res.country, function (key, val) {
+
+                options += "<option value=" + val.CountryID + ">" + val.CountryName + "</option>";
+            });
+            $('#CountryID').html(options).trigger('change');
+        }
+    });
+});
 
 $('#Signupform').parsley();
 
 $("#Signupform").submit(function (e) {
     e.preventDefault();
-    if ($("#Agree").prop("checked") == false) { return false; }
+   // if ($("#Agree").prop("checked") == false) { return false; }
     $.ajax({
         url: GetBaseURL() + "Register/AddCustomer",
         method: "POST",
@@ -31,6 +48,8 @@ $("#Signupform").submit(function (e) {
 
 });
 
+
+
 $('#customCheck1').click(function () {
     if ($(this).prop("checked") == true) {
         $("#customCheck1").prop("checked", true);
@@ -42,24 +61,6 @@ $('#customCheck1').click(function () {
     }
 });
 
-function bind_Country() {
-    $.ajax({
-        url: GetBaseURL() + "Register/GetCountryList",
-        type: 'GET',
-        dataType: 'json',
-        success: function (res) {
-            console.log(res);
-
-            var options = "<option value=''>--Select your Country--</option>";
-            $.each(res.country, function (key, val) {
-
-                options += "<option value=" + val.CountryID + ">" + val.CountryName + "</option>";
-            });
-            $('#CountryID').html(options).trigger('change');
-        }
-    });
-
-}
 
   
 

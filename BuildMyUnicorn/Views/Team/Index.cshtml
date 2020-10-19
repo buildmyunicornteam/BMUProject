@@ -60,48 +60,51 @@
 </div>
 
 <div class="row">
-    @foreach (var item in Model)
+    @if (Model != null)
     {
+        foreach (var item in Model)
+        {
 
-        <div class="col-md-6 col-lg-6 col-xl-4">
-            <div class="card card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-4 col-lg-3 text-center">
-                        <a href="app-contact-detail.html"><img src="../Content/file_upload/@(item.ImageID == null ? "profile-dummy.png" : item.ImageID)" width="90" alt="user" class="img-circle img-fluid"></a>
-                    </div>
-                    <div class="col-md-8 col-lg-9">
-                        <h3 class="box-title m-b-0">@item.FirstName  @item.LastName </h3>
-                        @{ var arrayRoles = String.IsNullOrEmpty(item.RoleInCompany) == false ? item.RoleInCompany.Split(',').ToArray() : new string[0];
-                            List<string> roleArray = new List<string>();
-                        }
-                        @foreach (var role in ViewBag.Role)
-                        {
-                            if (Array.Exists(arrayRoles, x => x == Convert.ToString(@role.ID)) == true)
-                            {
-                                roleArray.Add(@role.Value);
+            <div class="col-md-6 col-lg-6 col-xl-4">
+                <div class="card card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 col-lg-3 text-center">
+                            <a href="app-contact-detail.html"><img src="../Content/file_upload/@(item.ImageID == null ? "profile-dummy.png" : item.ImageID)" width="90" alt="user" class="img-circle img-fluid"></a>
+                        </div>
+                        <div class="col-md-8 col-lg-9">
+                            <h3 class="box-title m-b-0">@item.FirstName  @item.LastName </h3>
+                            @{ var arrayRoles = String.IsNullOrEmpty(item.RoleInCompany) == false ? item.RoleInCompany.Split(',').ToArray() : new string[0];
+                                List<string> roleArray = new List<string>();
                             }
-                        }
+                            @foreach (var role in ViewBag.Role)
+                            {
+                                if (Array.Exists(arrayRoles, x => x == Convert.ToString(@role.ID)) == true)
+                                {
+                                    roleArray.Add(@role.Value);
+                                }
+                            }
 
-                        @string.Join(", ", roleArray.ToArray())
+                            @string.Join(", ", roleArray.ToArray())
 
-                        <address>
-                            <abbr title="Phone"><i class="fas fa-phone-square"></i></abbr> @item.Phone
-                            <br />
-                            <i class="icons-Email"></i> @item.Email
-                            <br />
-                            <i class="icons-Globe"></i> @item.CountryName
-                        </address>
-                    </div>
-                    <div class="col-md-12 text-right" style="font-size:19px">
-                        <a href="@item.LinkedProfile"><i class="fab fa-linkedin"></i></a>
+                            <address>
+                                <abbr title="Phone"><i class="fas fa-phone-square"></i></abbr> @item.Phone
+                                <br />
+                                <i class="icons-Email"></i> @item.Email
+                                <br />
+                                <i class="icons-Globe"></i> @item.CountryName
+                            </address>
+                        </div>
+                        <div class="col-md-12 text-right" style="font-size:19px">
+                            <a href="@item.LinkedProfile"><i class="fab fa-linkedin"></i></a>
 
-                        <a href="/Profile?clientID=@item.ClientID"><i class="icons-Professor"></i></a>
+                            <a href="/Profile?clientID=@item.ClientID"><i class="icons-Professor"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
+        }
     }
 </div>
 <!-- /.row -->

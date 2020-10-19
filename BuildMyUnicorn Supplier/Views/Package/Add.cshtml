@@ -1,0 +1,156 @@
+﻿@section PageStyle
+{
+    <link href="/dist/css/pages/pricing-page.css" rel="stylesheet">
+}
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor"><a href="~/Package"><i class="mdi mdi-arrow-left"></i>Back to Package</a></h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Package</li>
+                <li class="breadcrumb-item active">Add</li>
+            </ol>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <form id="frm_AddPackage" method="post">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label for="wint1">Title</label>
+                                <input type="text" class="form-control jspackage" id="PackageTitle" name="PackageTitle" />
+                            </div>
+                            <div class="form-group">
+                                <label for="wint1">Amount</label>
+                                <input type="text" class="form-control jspackage" id="PackageAmount" name="PackageAmount" />
+                            </div>
+                            <div class="form-group">
+                                <label for="wint1">Duration</label>
+                                <select class="custom-select col-12 jspackage" id="Duration" name="Duration">
+                                    <option value="">- Please select -</option>
+                                    <option value="5198f427-a8ae-4cc2-b2c8-02079bc29a63">Yearly</option>
+                                    <option value="4488b472-0920-434a-8b47-6b5a39fe88c1">Monthly</option>
+                                    <option value="4488b472-0920-434a-8b47-6b5a39fe88c9">One Time</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="wint1">Currency</label>
+                                @Html.DropDownList("CurrencyID", new SelectList(ViewBag.Currency, "CurrencyID", "Name"), "- Please select -", new { @class = "custom-select col-12 jspackage" })
+
+                            </div>
+                            <div class="addel">
+                                <label for="person" class="control-label">
+                                    Package Attrbute(S):
+                                </label>
+                                <hr />
+
+                                <div class="form-group addel-target">
+
+                                    <div class="input-group">
+                                        <input type="text" name="packageAttribute[]" data-spaid="@Guid.NewGuid()" class="form-control packageAttribute jspackage">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-danger addel-delete">
+                                                <i class="far fa-times-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-success btn-block addel-add">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+
+                            <label for="wint1"><b>Preview </b></label>
+                            <div class="pricing-box b-l">
+                                <div class="pricing-body">
+                                    <div class="pricing-header">
+                                        <h4 class="text-center jsTitle"></h4>
+                                        <h2 class="text-center jsAmount"></h2>
+                                        <p class="uppercase jsDuration"> </p>
+                                    </div>
+                                    <div class="price-table-content jsAttribute">
+                                        @*<div class="price-row"><i class="icon-user"></i> 5 Members</div>*@
+
+
+                                    </div>
+                                    <div class="price-row">
+                                        <button class="btn btn-success waves-effect waves-light m-t-20">Sign up</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <button type="button" class="btn btn-default waves-effect"
+                                data-dismiss="modal">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary waves-effect">
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section PageScript
+{
+    <script src="~/assets/node_modules/added.jquery/addel.jquery.js"></script>
+    <script src="~/Content/app_script/page_script/package.js?version=@DateTime.Now"></script>
+    <script>
+            $(document).ready(function () {
+                $('.addel').addel({
+                    events: {
+                        added: function (event) {
+                           $('#v').data('spaid', 'newvalue');
+                            console.log('Added ' + event);
+                        }
+                    }
+                }).on('addel:delete', function (event) {
+                    if (!window.confirm('Are you absolutely positive you would like to delete: ' + '"' + event.target.find(':input').val() + '"?')) {
+                        console.log('Deletion prevented!');
+                        event.preventDefault();
+                       
+                    }
+                    else {alert(); $(".jspackage").trigger("change");}
+                });
+           $(document).on( "change", ".jspackage", function() {
+                 var symbol ="";
+                 var duration ="";
+                 $(".jsAttribute").html("");
+                 $(".jsTitle").text($("#PackageTitle").val());
+                 if($( "#CurrencyID" ).val() != "")
+                 {   symbol ="$"; $( "#CurrencyID option:selected" ).text();}
+                  if($( "#Duration" ).val() != "")
+                 {  duration =  $( "#Duration option:selected" ).text();}
+                 $(".jsDuration").html(duration);
+                 $(".jsAmount").html("<span class='price-sign'>"+symbol+"</span>" + $("#PackageAmount").val());
+                 $(".packageAttribute").each(function() {
+                  $(".jsAttribute").append('<div class="price-row">'+$(this).val()+'</div>');
+
+                });
+
+             });
+
+            });
+    </script>
+
+}

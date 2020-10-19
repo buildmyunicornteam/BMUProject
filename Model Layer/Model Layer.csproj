@@ -156,12 +156,14 @@
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Currency.cs" />
     <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\EmailConfirmation.cs" />
     <Compile Include="Models\ForgotPassword.cs" />
     <Compile Include="Models\Idea.cs" />
     <Compile Include="Models\IdeaList.cs" />
     <Compile Include="Models\Master.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,197 @@
+﻿
+@section PageStyle
+{
+
+    <link href="~/assets/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/formiojs@3.9.0/dist/formio.full.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" />
+    <style>
+        body {
+            color: #000;
+        }
+
+        .container {
+            padding-right: 1px;
+            padding-left: 1px;
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+
+        .topbar .top-navbar {
+            min-height: 50px !important;
+            padding: 0;
+        }
+
+        .navbar {
+            position: relative;
+            min-height: 50px;
+            margin-bottom: -18px;
+            border: 0px solid transparent;
+        }
+
+        .drag-container {
+            padding: 10px;
+            border: dotted 2px #e8e8e8;
+            background: #fff;
+        }
+
+        .btn {
+            color: #000;
+        }
+
+        .formio-form {
+            position: relative;
+            min-height: 80px;
+            background: #fff;
+            padding: 5px;
+        }
+
+        .card-body {
+            background: #fff;
+        }
+
+        .btn-secondary {
+            border-color: #4F5467 !important;
+            color: #fff !important;
+        }
+
+        .btn-circle {
+            border-radius: 100% !important;
+            width: 40px !important;
+            height: 40px !important;
+            padding: 10px !important;
+        }
+
+        .jq-toast-single {
+            background-color: #dc6b6b;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .glyphicon-new-window {
+            // display:none;
+        }
+        .card-body {
+            background-color: #353c48;
+            background-clip: border-box;
+            border: 0 solid transparent;
+            border-radius: 0;
+        }
+        .form-control {
+            width: 100%;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: .875rem;
+            line-height: 1.5;
+            background-color: #272c36;
+            background-clip: padding-box;
+            border: 1px solid #272c36;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        .formio-form {
+            position: relative;
+            min-height: 80px;
+            background-color: #353c48;
+            background-clip: border-box;
+            border: 0 solid transparent;
+            border-radius: 0;
+            padding: 5px;
+        }
+        h1, label {
+        color:#fff;
+        }
+    </style>
+
+
+}
+
+
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h4 class="text-themecolor"><a href="~/SurveyProfessional"><i class="mdi mdi-arrow-left"></i>Back to Professional</a></h4>
+        </div>
+        <div class="col-md-7 align-self-center text-right">
+            <div class="d-flex justify-content-end align-items-center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active">Professional</li>
+                    <li class="breadcrumb-item active">Question</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+
+<div class="login-box card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-2"> </div>
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <input type="hidden" id="SupplierID" value="@ViewBag.Question.SupplierID" />
+                        <input type="hidden" id="SQFID" value="@ViewBag.Question.SQFID" />
+                        <input type="hidden" id="QuestionForm" value="@ViewBag.Question.QuestionForm" />
+                        <h1>@ViewBag.Question.QuestionTitle</h1>
+                        <div id="formio"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+@section PageScript
+{
+
+    <script src="~/assets/node_modules/toast-master/js/jquery.toast.js"></script>
+    <script src="https://unpkg.com/formiojs@3.9.0/dist/formio.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+   <script>
+       $(document).ready(function () {
+
+           Formio.createForm(document.getElementById('formio'),
+               //readOnly: true,
+               //renderMode: 'html',
+               JSON.parse($("#QuestionForm").val())).then(function (form) {
+                   // Prevent the submission from going to the form.io server.
+                   form.nosubmit = true;
+
+                   // Triggered when they click the submit button.
+                   form.on('submit', function (submission) {
+
+                       //  alert('Submission sent to custom endpoint. See developer console.');
+                       //SurveyID
+                       return fetch(GetBaseURL() + "SurveyProfessional/AddQuestionData?SQFID=" + $("#SQFID").val() + "&SupplierID=" + $("#SupplierID").val() + "", {
+                           body: JSON.stringify(submission),
+                           headers: {
+                               'content-type': 'application/json'
+                           },
+
+                           method: 'POST',
+                           mode: 'cors',
+                       })
+                           .then(response => {
+                               form.emit('submitDone', submission)
+                               //alert();
+                               // response.json()
+                           })
+                   });
+               });
+       });
+    </script>
+  
+
+}
+
+
+
+

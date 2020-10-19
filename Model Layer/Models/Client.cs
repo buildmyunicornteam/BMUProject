@@ -5,8 +5,9 @@ namespace Model_Layer.Models
 {
     public class Client : Common
     {
-        public int ClientID { get; set; }
-        public int TeamID { get; set; }
+        public Guid ClientID { get; set; }
+        public Guid TeamID { get; set; }
+        public string StartupName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -24,7 +25,7 @@ namespace Model_Layer.Models
     }
     public class ClientTeam : Client
     {
-        public int TeamClientID { get; set; }
+        public Guid TeamClientID { get; set; }
     }
 
    

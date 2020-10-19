@@ -16,7 +16,7 @@ namespace BuildMyUnicorn.Business_Layer
             DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
             List<ParametersCollection> parameters = new List<ParametersCollection>() {
                 new ParametersCollection { ParamterName = "@IdeaID", ParamterValue = Guid.NewGuid(), ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input },
-                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Guid.Parse(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@IdeaExplain", ParamterValue = Model.IdeaExplain, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@ProgressValue", ParamterValue = Model.ProgressValue, ParamterType = DbType.Decimal, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@StartupType", ParamterValue = Model.IdeaBreakDown.StartupType, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
@@ -70,7 +70,7 @@ namespace BuildMyUnicorn.Business_Layer
             DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
             List<ParametersCollection> parameters = new List<ParametersCollection>() {
                 new ParametersCollection { ParamterName = "@IdeaID", ParamterValue = Model.IdeaID, ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input },
-                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Guid.Parse(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@IdeaExplain", ParamterValue = Model.IdeaExplain, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@StartupType", ParamterValue = Model.IdeaBreakDown.StartupType, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@ProgressValue", ParamterValue = Model.ProgressValue, ParamterType = DbType.Decimal, ParameterDirection = ParameterDirection.Input },
@@ -124,7 +124,7 @@ namespace BuildMyUnicorn.Business_Layer
         {
             DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
             List<ParametersCollection> parameters = new List<ParametersCollection>() {
-                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input }
+                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Guid.Parse(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input }
             };
             return obj.GetSingle<IdeaViewModel>(CommandType.StoredProcedure, "sp_get_client_idea", parameters);
 

@@ -125,7 +125,7 @@
                             <div class="col-12">
 
                                 <div class="card">
-                                    <form id="frm_UpdateClientTeam" class="form-material m-t-40" method="post">
+                                    <form id="frm_UpdateProfile" class="form-material m-t-40" method="post">
                                         <input type="hidden" id="ClientID" name="ClientID" value="@Model.ClientID" />
                                         <input type="hidden" id="ImageID" name="ImageID" value="@Model.ImageID" />
                                         <input type="hidden" id="RoleInCompany" name="RoleInCompany" value="@Model.RoleInCompany" />
@@ -298,6 +298,6 @@
 @section PageScript
 {
     <script src="~/assets/node_modules/toast-master/js/jquery.toast.js"></script>
-    <script src="~/Content/app_script/page_script/team.js?version=@DateTime.Now"></script>
+    <script src="~/Content/app_script/page_script/team.js"></script>
 }
 

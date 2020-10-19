@@ -57,7 +57,6 @@ namespace BuildMyUnicorn.Controllers
             }
         }
 
-
         public ActionResult ForgotPassword()
         {
             return View();
@@ -116,6 +115,7 @@ namespace BuildMyUnicorn.Controllers
             return new ClientManager().AddNewClient(Model);
 
         }
+
         public string SendPasswordResetLink(String Email)
         {
 

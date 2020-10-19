@@ -7,22 +7,20 @@ $(document).ready(function () {
     $("#Businessnav ul").addClass("in");
 
 });
-    $("#ImageUpload").on('change', function () {
+ $("#ImageUpload").on('change', function () {
     
-        var form_Data = new FormData();
-
-        var fileUpload = $("#ImageUpload").get(0);
-        var files = fileUpload.files;  
-
-        if (files.length > 0) {
-            for (var i = 0; i < files.length; i++) {
-                var fileName = files[i].name;
-                var flExt = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length);
-                if ($.inArray(flExt.toLowerCase(), ['gif', 'png', 'jpg', 'bmp', 'jpeg']) !== -1)
-                    form_Data.append("file", files[i]);
-                else { alert("Invalid File");return false; }
-            }
-        }
+var form_Data = new FormData();
+var fileUpload = $("#ImageUpload").get(0);
+var files = fileUpload.files;  
+if (files.length > 0) {
+    for (var i = 0; i < files.length; i++) {
+        var fileName = files[i].name;
+        var flExt = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length);
+        if ($.inArray(flExt.toLowerCase(), ['gif', 'png', 'jpg', 'bmp', 'jpeg']) !== -1)
+            form_Data.append("file", files[i]);
+        else { alert("Invalid File");return false; }
+    }
+}
      
         $.ajax({
             type: "POST",
@@ -65,7 +63,7 @@ $(document).ready(function () {
 
     });
 
- $("#EditImageUpload").on('change', function () {
+    $("#EditImageUpload").on('change', function () {
 
 
         var form_Data = new FormData();
@@ -221,45 +219,7 @@ $("#frm_UpdateClientTeam").submit(function (e) {
 
 });
 
-$("#frm_UpdateClientProfile").submit(function (e) {
 
-    e.preventDefault();
-    var RoleInCompany = [];
-    $.each($("input[name='_RoleInCompany']:checked"), function () {
-        RoleInCompany.push($(this).val());
-    });
-    $("#RoleInCompany").val(RoleInCompany);
-    $.ajax({
-        url: GetBaseURL() + "Team/UpdateClientProfile",
-        method: "POST",
-        data: $('#frm_UpdateClientProfile').serialize(),
-        success: function (response) {
-
-
-            if (response == "OK") {
-               
-              
-                $.toast({
-                    heading: 'Success',
-                    text: 'Record Updated Successfully',
-                    position: 'top-right',
-                    loaderBg: '#ff6849',
-                    icon: 'success',
-                    hideAfter: 3500,
-                    stack: 6
-                });
-                $('#dialogClientUpdate').modal('hide');
-            }
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            $(".erorLabel").removeClass("invisible");
-            $(".errorMessage").text("Status: " + textStatus + "Error: " + errorThrown);
-        }
-    });
-
-
-
-});
 
 
   $('input[type="checkbox"]').click(function () {

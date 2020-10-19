@@ -1,0 +1,58 @@
+﻿@using Model_Layer.Models;
+@model  IEnumerable<Package>
+@section PageStyle
+{
+    <link href="/dist/css/pages/pricing-page.css" rel="stylesheet">
+}
+    <div id="formmio"></div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row pricing-plan">
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <div class="col-md-3 col-xs-12 col-sm-6 no-padding">
+                                <div class="pricing-box">
+                                    <div class="pricing-body b-l">
+                                        <div class="pricing-header">
+                                            <h4 class="text-center">@item.PackageTitle</h4>
+                                            <h2 class="text-center"><span class="price-sign">@item.Symbol</span>@item.PackageAmount</h2>
+                                            @*<p class="uppercase">per month</p>*@
+                                        </div>
+                                        <div class="price-table-content">
+                                            @{ var arrayAtribute = String.IsNullOrEmpty(item.PackageAttribute) == false ? @item.PackageAttribute.Split(',').ToArray() : new string[0]; }
+
+                                            @foreach (var attribute in arrayAtribute)
+                                            {
+
+
+                                                <div class="price-row"> @attribute</div>
+
+
+                                            }
+
+                                            <div class="price-row">
+                                                <a href="/SurveyProfessional/Question?SupplierID=@item.SupplierID" class="btn btn-success waves-effect waves-light m-t-20">Sign up</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section PageScript
+{
+
+
+}

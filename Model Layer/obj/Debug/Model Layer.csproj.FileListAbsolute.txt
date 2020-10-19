@@ -177,8 +177,8 @@ C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\bin\Microsoft.AI.DependencyCol
 C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\bin\Microsoft.AI.WindowsServer.xml
 C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\bin\Microsoft.AI.Web.xml
-C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\obj\Debug\Model Layer.csprojResolveAssemblyReference.cache
 C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\obj\Debug\Model Layer.csproj.CoreCompileInputs.cache
 C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\obj\Debug\Model Layer.csproj.CopyComplete
 C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\obj\Debug\Model Layer.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\obj\Debug\Model Layer.pdb
+C:\Projects\BuildMyUnicorn\BMUProject\Model Layer\obj\Debug\Model Layer.csprojAssemblyReference.cache

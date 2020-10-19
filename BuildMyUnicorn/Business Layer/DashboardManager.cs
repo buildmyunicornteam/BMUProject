@@ -14,7 +14,7 @@ namespace BuildMyUnicorn.Business_Layer
         {
             DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
             List<ParametersCollection> parameters = new List<ParametersCollection>() {
-                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input }
+                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Guid.Parse(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input }
             };
             IdeaViewModel  Model =  obj.GetSingle<IdeaViewModel>(CommandType.StoredProcedure, "sp_get_client_idea", parameters);
             IdeaProgress IdeaObj = new IdeaProgress();

@@ -1,0 +1,32 @@
+﻿@section PageStyle
+{
+    <link href="~/assets/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+              
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("~/Views/Dialog/_SupplierProfile.cshtml")
+
+@section PageScript
+{
+
+    <script src="~/assets/node_modules/Chart.js/Chart.min.js"></script>
+    <script src="~/assets/node_modules/toast-master/js/jquery.toast.js"></script>
+    <script src="~/Content/app_script/page_script/dashboard.js?version=@DateTime.Now"></script>
+
+
+    @if (!@ViewBag.Supplier.IsProfileUpdated)
+    {
+
+        <script>
+            $('#dialogClientUpdate').modal('show');
+        </script>
+    }
+}

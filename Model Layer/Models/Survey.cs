@@ -9,7 +9,7 @@ namespace Model_Layer.Models
     public class Survey : Common
     {
         public Guid SurveyID { get; set; }
-        public int ClientID { get; set; }
+        public Guid ClientID { get; set; }
         public string SurveyTitle { get; set; }
         [AllowHtml]
         public string SurveyForm { get; set; }

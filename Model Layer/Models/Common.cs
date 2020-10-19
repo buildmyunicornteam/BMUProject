@@ -9,8 +9,9 @@ namespace Model_Layer.Models
     {
         public string CreatedName { get; set; }
         public string ModifiedName { get; set; }
-        public int CreatedBy { get; set; }
-        public int ModifiedBy { get; set; }
+       // public int CreatedBy { get; set; }
+        public Guid CreatedBy { get; set; }
+        public Guid ModifiedBy { get; set; }
         public DateTime CreateDateTime { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public DateTime ModifiedDateTime { get; set; }

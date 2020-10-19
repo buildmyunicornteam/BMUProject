@@ -11,8 +11,9 @@ namespace BuildMyUnicorn.Controllers
     public class ProfileController : WebController
     {
         // GET: Profile
-        public ActionResult Index(int clientID)
+        public ActionResult Index()
         {
+            Guid clientID = Guid.Parse(User.Identity.Name);
             ViewBag.CountryList = new CountryManager().GetCountryList();
             Client obj = new  ClientManager().GetClient(clientID);
             List<MasterCommon> RoleList = new List<MasterCommon>();

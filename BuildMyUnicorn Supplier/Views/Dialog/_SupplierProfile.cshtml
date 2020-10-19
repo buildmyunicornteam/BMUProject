@@ -1,0 +1,202 @@
+﻿
+
+<div id="dialogClientUpdate" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="myModalLabel">Please Complete Profile</h4>
+            </div>
+            <form class="form-horizontal form-material" id="frm_UpdateProfile">
+                <input type="hidden" name="BusinessPlacement" id="BusinessPlacement" />
+                <input type="hidden" name="WorkLocation" id="WorkLocation" />
+                <input type="hidden" id="ImageID" name="ImageID" />
+                <div class="modal-body">
+
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label for="wint1">Company Name</label>
+                                <input type="text" class="form-control" id="CompanyName" name="CompanyName" value="@ViewBag.Supplier.CompanyName" />
+                            </div>
+                            <div class="form-group">
+                                <label for="wint1">Company Profile</label>
+
+                                <textarea class="form-control ideatextarea progress-required progress-percent" id="CompanyProfile" name="CompanyProfile" oninput="auto_grow_idea_textarea(this)" aria-invalid="false"> </textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group text-center">
+                                @*<label for="wint1">Logo</label>*@
+                                <div class="fileupload">
+
+                                    <div class="btn btn-default btn-file" style="position: relative; text-align:center;margin-left:123px">
+                                        <input type="button" class="btn btn-primary" style="display:inline !important" value="Choose File" />
+                                        <input type="file" id="ImageUpload" style="position: absolute;top: 0;right: 0;width: 100%;height: 100%;margin: 0;opacity: 0;">
+
+                                    </div>
+
+                                    <div class="dropzone" id="imagepreview" style="padding:5px;width:124px;margin-left:50%; text-align:right">
+                                        <div id="my_img" class="dz-preview dz-file-preview dz-error" style="position:relative;text-align:right"><img src="../Content/file_upload/profile-dummy.png" class="img-responsive img-thumbnail;pull-right" /></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Business Placement  </label>
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        @{ int Count = Enumerable.Count(ViewBag.WorkLocation);
+                                            int halfCount = Count / 2;
+                                            int x = 0;
+
+                                        }
+                                        @foreach (var item in ViewBag.WorkLocation)
+                                        {
+                                            if (x <= halfCount)
+                                            {
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="WorkLocation" value="@item.ID">
+                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                </div>
+                                                x = x + 1;
+                                            }
+
+                                        }
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        @{x = 0; }
+                                        @foreach (var item in ViewBag.WorkLocation)
+                                        {
+
+
+                                            if (x > halfCount)
+                                            {
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="WorkLocation" value="@item.ID">
+                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                </div>
+
+                                            }
+                                            x = x + 1;
+
+                                        }
+
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Work Location </label> <br />
+                                <div class="row">
+
+
+                                    <div class="col-md-6">
+                                        @{ Count = Enumerable.Count(ViewBag.BusinessPlacement);
+                                            halfCount = Count / 2;
+                                            x = 0;
+
+                                        }
+                                        @foreach (var item in ViewBag.BusinessPlacement)
+                                        {
+                                            if (x < halfCount)
+                                            {
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="BusinessPlacement" value="@item.ID">
+                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                </div>
+                                                x = x + 1;
+                                            }
+
+                                        }
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        @{x = 0; }
+                                        @foreach (var item in ViewBag.BusinessPlacement)
+                                        {
+
+
+                                            if (x >= halfCount)
+                                            {
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="BusinessPlacement" value="@item.ID">
+                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                </div>
+
+                                            }
+                                            x = x + 1;
+
+                                        }
+
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="wint1">Website</label>
+                            <input type="text" class="form-control" id="Website" name="Website" />
+                        </div>
+                        <div class="form-group">
+                            <label for="wint1">Linked</label>
+                            <input type="text" class="form-control" id="LinkedProfile" name="LinkedProfile" />
+                        </div>
+                        <div class="form-group">
+                            <label for="wint1">Twitter</label>
+                            <input type="text" class="form-control" id="Twitter" name="Twitter" />
+                        </div>
+                        <div class="form-group">
+                            <label for="wint1">Address</label>
+                            <textarea class="form-control ideatextarea progress-required progress-percent" id="Address" name="Address" oninput="auto_grow_idea_textarea(this)" aria-invalid="false"> </textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default waves-effect"
+                            data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary waves-effect">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+

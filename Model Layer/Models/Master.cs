@@ -5,6 +5,16 @@ using System.Web;
 
 namespace Model_Layer.Models
 {
+    public enum OptionType
+    {
+        BusinessPlacement = 1,
+        WorkLocation = 2,
+        Charge = 3,
+        MoneyRaise = 4,
+        Selling = 5,
+        Startup = 6,
+        Technology = 7
+    }
 
     public class MasterCommon : Common
     {
@@ -12,6 +22,17 @@ namespace Model_Layer.Models
         public string Value { get; set; }
         public int DisplayOrder { get; set; }
     }
+
+    public class Option : Common
+    {
+        public Guid ID { get; set; }
+        public string Value { get; set; }
+        public int DisplayOrder { get; set; }
+        public OptionType Type { get; set; }
+    }
+
+  
+
     public class Startup : MasterCommon
     {
         public string TableName { get; } = "tbl_master_startup";

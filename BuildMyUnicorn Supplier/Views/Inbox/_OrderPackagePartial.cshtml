@@ -1,0 +1,57 @@
+﻿@using Model_Layer.Models;
+@model IEnumerable<supplierClient>
+
+<div class="row">
+    <div class="col-lg-12">
+  
+    
+                <div class="col-lg-12 col-md-12"">
+         
+                 <div class="card-body p-t-0">
+                        <div class="card b-all shadow-none">
+                            <div class="inbox-center table-responsive">
+                                <table class="table table-hover no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Client Name</th>
+                                         
+                                            <th>Email</th>
+                                            <th>Package</th>
+                                            <th>Order</th>
+                                            <th>Date</th>
+                                       
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model != null)
+                                        {
+                                            foreach (var Item in Model)
+                                            {
+                                        <tr class="unread">
+
+                                            <td style="width:40px" class="hidden-xs-down"><i class="far fa-star"></i></td>
+                                            <td class="max-texts"> <a href="~/Inbox/Client?ClientID=@Item.ClientID">@Item.FirstName @Item.LastName </a></td>
+                                            <td class="hidden-xs-down">@Item.Email</td>
+                                            <td class="max-texts"> <a href="">@Item.PackageTitle </a></td>
+                                            <td class="hidden-xs-down"><span class="badge badge-pill badge-success ml-auto">Success</span></td>
+                                            <td class="">@Item.CreateDateTime.ToString("F")</td>
+                                        </tr>
+
+                                            }
+
+
+                                        }
+
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+

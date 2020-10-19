@@ -159,10 +159,12 @@
     <Compile Include="Business Layer\DashboardManager.cs" />
     <Compile Include="Business Layer\IdeaManager.cs" />
     <Compile Include="Business Layer\Master.cs" />
+    <Compile Include="Business Layer\ProfessionalManager.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IdeaController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SurveyProfessionalController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\QuestController.cs" />
     <Compile Include="Controllers\QuestionnaireController.cs" />
@@ -3422,6 +3424,7 @@
     <Content Include="assets\node_modules\owl.carousel\owl.custom.js" />
     <Content Include="assets\node_modules\owl.carousel\owl.theme.default.css" />
     <Content Include="assets\node_modules\pace\pace.min.js" />
+    <Content Include="assets\node_modules\parsely\parsley.js" />
     <Content Include="assets\node_modules\Parsley\parsley.css" />
     <Content Include="assets\node_modules\Parsley\parsley.min.js" />
     <Content Include="assets\node_modules\peity\jquery.peity.init.js" />
@@ -3997,6 +4000,9 @@
     <Content Include="Content\app_script\parsley.js" />
     <Content Include="Content\app_script\tstfile.js" />
     <Content Include="Content\app_script\_notes\dwsync.xml" />
+    <Content Include="Content\card\card.css" />
+    <Content Include="Content\card\card.js" />
+    <Content Include="Content\card\jquery.card.js" />
     <Content Include="Content\file_upload\help-icon.png" />
     <Content Include="Content\file_upload\profile-image.png" />
     <Content Include="Content\images\arrow.png" />
@@ -6113,6 +6119,11 @@
     <Content Include="Views\Questionnaire\Create.cshtml" />
     <Content Include="Views\Questionnaire\SurveyData.cshtml" />
     <Content Include="Views\Shared\_BadRequest.cshtml" />
+    <Content Include="Views\SurveyProfessional\Index.cshtml" />
+    <Content Include="Views\SurveyProfessional\ProfessionalProfile.cshtml" />
+    <Content Include="Views\SurveyProfessional\Package.cshtml" />
+    <Content Include="Views\SurveyProfessional\Question.cshtml" />
+    <Content Include="Views\Dialog\_Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="assets\node_modules\kendoui\typescript\kendo.all.d.ts" />

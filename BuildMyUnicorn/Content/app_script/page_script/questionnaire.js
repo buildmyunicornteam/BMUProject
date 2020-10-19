@@ -251,7 +251,7 @@ const options = {
                     icon: 'phone-square',
                     schema: {
                         label: 'Question',
-                        type: 'phoneNumber',
+                        type: 'content',
                         key: 'mobilePhone',
                         input: true
                     }
@@ -414,3 +414,5 @@ function toastMessage(heading,icon, message)
         stack: 18
     });
 }
+
+

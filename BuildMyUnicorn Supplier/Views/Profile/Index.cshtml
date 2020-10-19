@@ -1,0 +1,411 @@
+﻿@using Model_Layer.Models;
+@model Model_Layer.Models.Supplier
+@section PageStyle
+{
+    <link href="~/assets/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
+}
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor"><a href="~/Team"><i class="mdi mdi-arrow-left"></i>Back to Team</a></h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">The Business</li>
+                <li class="breadcrumb-item active">Profile</li>
+            </ol>
+
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<!-- Row -->
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-4 col-xlg-3 col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <center class="m-t-30">
+                    <img src="../Content/file_upload/@(Model.ImageID == null ? "profile-dummy.png" : Model.ImageID)" class="img-circle" width="150" />
+                    <h4 class="card-title m-t-10">@Model.CompanyName </h4>
+                    <h6 class="card-subtitle"></h6>
+                    <p><i class="mdi mdi-star"></i> <i class="mdi mdi-star"></i> <i class="mdi mdi-star"></i> <i class="mdi mdi-star"></i> <i class="mdi mdi-star"></i></p>
+                    @*<div class="row text-center justify-content-md-center">
+                            <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-people"></i> <font class="font-medium">254</font></a></div>
+                            <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-picture"></i> <font class="font-medium">54</font></a></div>
+                        </div>*@
+                </center>
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div class="card-body">
+                <small class="text-muted">Email address </small>
+                <h6>@Model.Email</h6> <small class="text-muted p-t-30 db">Address</small>
+                <h6>@Model.Address</h6> @*<small class="text-muted p-t-30 db">Address</small>
+                    <h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>*@
+                @*<div class="map-box">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470029.1604841957!2d72.29955005258641!3d23.019996818380896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1493204785508" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>*@ <small class="text-muted p-t-30 db">Social Profile</small>
+                <br />
+
+                <a href="@Model.LinkedProfile" class="btn btn-circle btn-secondary"><i class="fab fa-linkedin" title="Linkedin"></i></a>
+                <a href="@Model.Twitter" class="btn btn-circle btn-secondary"><i class="fab fa-twitter" title="Twitter"></i></a>
+                <a href="@Model.Website" class="btn btn-circle btn-secondary"><i class="fas fa-globe" title="Website"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+        <div class="card">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs profile-tab" role="tablist">
+
+                @*<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" role="tab">Profile</a> </li>*@
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#settings" role="tab"> Profile Settings</a> </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <!--second tab-->
+                <div class="tab-pane " id="profile" role="tabpanel">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Full Name</strong>
+                                <br>
+                                <p class="text-muted">@Model.FirstName @Model.LastName</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Mobile</strong>
+                                <br>
+                                <p class="text-muted"></p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Email</strong>
+                                <br>
+                                <p class="text-muted">@Model.Email</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <strong>Country</strong>
+                                <br>
+                                <p class="text-muted">@Model.CountryName</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="m-t-30"> </p>
+                        @*<h4 class="font-medium m-t-30">Skill Set</h4>*@
+                        <hr>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane active" id="settings" role="tabpanel">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+
+                                <div class="card">
+                                    <form id="frm_UpdateProfile" class="form-material m-t-40" method="post">
+                                        <input type="hidden" id="SupplierID" name="SupplierID" value="@Model.SupplierID" />
+                                        <input type="hidden" id="ImageID" name="ImageID" value="@Model.ImageID" />
+
+
+
+                                        <div class="card-body">
+
+
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Company Name</label>
+                                                        <input type="text" id="CompanyName" name="CompanyName" class="form-control form-control-line" value="@Model.CompanyName">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Email</label>
+                                                        <input type="text" id="Email" name="Email" class="form-control form-control-line" value="@Model.Email">
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>First Name</label>
+                                                        <input type="text" id="FirstName" name="FirstName" class="form-control form-control-line" value="@Model.FirstName">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Last Name</label>
+                                                        <input type="text" id="LastName" name="LastName" class="form-control form-control-line" value="@Model.LastName">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Country</label>
+                                                        @Html.DropDownList("CountryID", new SelectList(ViewBag.CountryList, "CountryID", "CountryName"), "- Please select -", new { @class = "custom-select col-12" })
+                                                        @*<input type="text" class="form-control" value="" autocomplete="off">*@
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <label>Business Placement  </label>
+                                                            <div class="row">
+                                                                @{ var arrayWorkLocation = String.IsNullOrEmpty(@Model.WorkLocation) == false ? @Model.WorkLocation.Split(',').ToArray() : new string[0]; }
+                                                                <div class="col-md-6">
+                                                                    @{ int Count = Enumerable.Count(ViewBag.WorkLocation);
+                                                                        int halfCount = Count / 2;
+                                                                        int x = 0;
+
+                                                                    }
+                                                                    @foreach (var item in ViewBag.WorkLocation)
+                                                                    {
+
+                                                                        if (x <= halfCount)
+                                                                        {
+                                                                            if (Array.Exists(arrayWorkLocation, o => o == Convert.ToString(@item.ID)) == true)
+                                                                            {
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="_RoleInCompany" value="@item.ID" checked="checked">
+                                                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                                                </div>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="_RoleInCompany" value="@item.ID">
+                                                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                                                </div>
+                                                                            }
+                                                                            x = x + 1;
+                                                                        }
+
+                                                                    }
+
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    @{x = 0; }
+                                                                    @foreach (var item in ViewBag.WorkLocation)
+                                                                    {
+
+
+                                                                        if (x > halfCount)
+                                                                        {
+                                                                            if (Array.Exists(arrayWorkLocation, o => o == Convert.ToString(@item.ID)) == true)
+                                                                            {
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="_RoleInCompany" value="@item.ID" checked="checked">
+                                                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                                                </div>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="_RoleInCompany" value="@item.ID">
+                                                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                                                </div>
+                                                                            }
+
+                                                                        }
+                                                                        x = x + 1;
+
+                                                                    }
+
+                                                                </div>
+
+
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Work Location </label> <br />
+                                                            <div class="row">
+
+                                                                @{ var arrayBusinessPlacement = String.IsNullOrEmpty(@Model.BusinessPlacement) == false ? @Model.BusinessPlacement.Split(',').ToArray() : new string[0]; }
+                                                                <div class="col-md-6">
+                                                                    @{ Count = Enumerable.Count(ViewBag.BusinessPlacement);
+                                                                        halfCount = Count / 2;
+                                                                        x = 0;
+
+                                                                    }
+                                                                    @foreach (var item in ViewBag.BusinessPlacement)
+                                                                    {
+                                                                        if (x < halfCount)
+                                                                        {
+                                                                            if (Array.Exists(arrayWorkLocation, o => o == Convert.ToString(@item.ID)) == true)
+                                                                            {
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="WorkLocation" value="@item.ID" checked="checked">
+                                                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                                                </div>
+
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="WorkLocation" value="@item.ID">
+                                                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                                                </div>
+                                                                            }
+                                                                            x = x + 1;
+                                                                        }
+
+                                                                    }
+
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    @{x = 0; }
+                                                                    @foreach (var item in ViewBag.BusinessPlacement)
+                                                                    {
+
+
+                                                                        if (x >= halfCount)
+                                                                        {
+                                                                            if (Array.Exists(arrayWorkLocation, o => o == Convert.ToString(@item.ID)) == true)
+                                                                            {
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="BusinessPlacement" value="@item.ID" checked="checked">
+                                                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                                                </div>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="BusinessPlacement" value="@item.ID">
+                                                                                    <label class="custom-control-label" for="@item.ID">@item.Value</label>
+                                                                                </div>
+                                                                            }
+
+                                                                        }
+                                                                        x = x + 1;
+
+                                                                    }
+
+                                                                </div>
+
+
+
+
+                                                            </div>
+
+
+
+
+
+
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="col-md-4">
+
+                                                        <div class="form-group">
+                                                            <label for="wint1">Photograph</label>
+                                                            <div class="fileupload">
+
+                                                                <div class="btn btn-default btn-file" style="position: relative; text-align:right">
+                                                                    <input type="button" class="btn btn-primary pull-right" style="display:inline !important" value="Choose File" />
+                                                                    <input type="file" id="ImageUpload" style="position: absolute;top: 0;right: 0;width: 100%;height: 100%;margin: 0;opacity: 0;">
+
+                                                                </div>
+
+                                                                <div class="dropzone" id="imagepreview" style="padding:5px;">
+                                                                    <div id="my_img" class="dz-preview dz-file-preview dz-error" style="position:relative;text-align:center"><img src="../Content/file_upload/@(Model.ImageID == null ? "profile-dummy.png" : Model.ImageID)" class="img-responsive img-thumbnail" /></div>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Website</label>
+                                                        <input type="text" id="Website" name="Website" class="form-control form-control-line" value="@Model.Website">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Linkedin</label>
+                                                        <input type="text" id="LinkedProfile" name="LinkedProfile" class="form-control form-control-line" value="@Model.LinkedProfile">
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Twitter</label>
+                                                        <input type="text" id="Twitter" name="Twitter" class="form-control form-control-line" value="@Model.Twitter">
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Address</label>
+                                                        <textarea class="form-control form-control-line" id="Address" name="Address" oninput="auto_grow_idea_textarea(this)">@Model.Address</textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="form-group text-right">
+                                            <button type="submit" class="btn btn-info">Update</button>
+
+
+                                        </div>
+                                    </form>
+                                </div>
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+</div>
+@section PageScript
+{
+    <script src="~/assets/node_modules/toast-master/js/jquery.toast.js"></script>
+    <script src="~/Content/app_script/page_script/profile.js?version=@DateTime.Now"></script>
+}
+

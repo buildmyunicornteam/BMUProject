@@ -1,0 +1,86 @@
+﻿@using Model_Layer.Models;
+@model IEnumerable<Package>
+
+
+<section class="employee-list bqe-timesheet admintable">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Package Amount</th>
+                    <th>Status</th>
+                    <th>CreatedBy</th>
+                    <th>Created Date</th>
+                    <th class="text-nowrap">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{ int index = 1;
+                    String strUrl = HttpContext.Current.Request.Url.AbsoluteUri.Replace(HttpContext.Current.Request.Url.PathAndQuery, VirtualPathUtility.ToAbsolute("~/"));
+                }
+                @if (Model.Count() != 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr style='background-color:#303641' class="@(item.IsActive == true ? "" : "inActiveSurvey");">
+
+                            <td class="text-left">
+
+                                <input type="hidden" id="@item.SupplierPackageID" value="@strUrl/Survey?SurveyID=@item.SupplierPackageID)" />
+                                @index
+                                @{ index++; }
+                            </td>
+                            <td class="text-left link-display">
+                                @item.PackageTitle
+                                <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </td>
+                            <td class="text-left fixed-width-95">
+                                @item.PackageAmount @item.Code
+                            </td>
+                            <td>
+                                @if (item.IsActive == true)
+                                {<span class='label label-success'>Active</span> }
+                                else
+                                { <span class='label label-danger'>In-Active</span>}
+                            </td>
+                            <td class="text-left">
+                                @item.CreatedName
+                            </td>
+                            <td class="text-left fixed-width-95">
+                                @item.CreatedDateTime.ToString("d")
+
+                            </td>
+                            <td class="text-left">
+                               
+                                @*<a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Edit"> <i class="fas fa-pencil-alt" title="Edit"></i> </a>*@
+                                <a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Delete" class="jsDeletePackage" data-supplierackageid="@item.SupplierPackageID"> <i class="fas fa-trash-alt" title="Delete"></i> </a>
+
+                               
+                                <a href="~/Package/Edit?SupplierPackageID=@item.SupplierPackageID" data-toggle="tooltip" data-original-title="Close">
+                                    <i class="fas fa-external-link-square-alt" title="update"></i>
+                                </a>
+                              
+                            </td>
+
+                        </tr>
+
+                    }
+                }
+                else
+                {
+                    <tr style="background-color:#303641"> <td colspan="7" style="height:100px; text-align:center; padding-top:50px"> No Record Found </td> </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+
+</section>
+
+
+
+

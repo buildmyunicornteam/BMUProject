@@ -81,12 +81,13 @@
             height: 40px !important;
             padding: 10px !important;
         }
+
         .login-box {
             width: 100%;
             margin: 0 auto;
         }
+
         .body {
-          
             overflow: scroll;
         }
     </style>
@@ -124,26 +125,26 @@
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-   
-        <div class="login-box card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-2"> </div>
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-body">
-                                    <input type="hidden" id="SurveyID" value="@ViewBag.obj.SurveyID"/>
-                                    <input type="hidden" id="SurveyForm" value="@ViewBag.obj.SurveyForm" />
-                                    <h1>@ViewBag.obj.SurveyTitle</h1>
-                                    <div id="formio"> </div>
-                                </div>
-                            </div>
+
+    <div class="login-box card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-2"> </div>
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <input type="hidden" id="SurveyID" value="@ViewBag.obj.SurveyID" />
+                            <input type="hidden" id="SurveyForm" value="@ViewBag.obj.SurveyForm" />
+                            <h1>@ViewBag.obj.SurveyTitle</h1>
+                            <div id="formio"> </div>
                         </div>
                     </div>
-
                 </div>
+            </div>
+
         </div>
-   
+    </div>
+
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
@@ -182,6 +183,7 @@
 
 </body>
 </html>
+
 
 
 

@@ -187,8 +187,8 @@ C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.Dependency
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.WindowsServer.xml
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.Web.xml
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Client.csprojResolveAssemblyReference.cache
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Client.csproj.CoreCompileInputs.cache
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Client.csproj.CopyComplete
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn.pdb
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Client.csprojAssemblyReference.cache

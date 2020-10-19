@@ -1,0 +1,65 @@
+﻿
+
+<link href="~/assets/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
+@section PageStyle
+{
+    <style>
+        .inActiveSurvey {
+            border-left: 2px solid red !important;
+        }
+    </style>
+}
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor" style="color:#fff">Package</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item" style="color:#fff">Package </li>
+            </ol>
+            <a href="~/Package/Add" class="btn btn-info d-none d-lg-block m-l-15">Add Package</a>
+
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <section id="jsMainList" data-controller="Package" data-action="PackageList"> </section>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/Views/Dialog/_Package.cshtml")
+
+@section PageScript
+{
+    <script src="~/assets/node_modules/toast-master/js/jquery.toast.js"></script>
+    <script src="~/assets/node_modules/added.jquery/addel.jquery.js"></script>
+    <script src="~/Content/app_script/page_script/package.js?version=@DateTime.Now"></script>
+    <script>
+            $(document).ready(function () {
+                $('.addel').addel({
+                    events: {
+                        added: function (event) {
+                           $('#v').data('spaid', 'newvalue');
+                            console.log('Added ' + event);
+                        }
+                    }
+                }).on('addel:delete', function (event) {
+                    if (!window.confirm('Are you absolutely positive you would like to delete: ' + '"' + event.target.find(':input').val() + '"?')) {
+                        console.log('Deletion prevented!');
+                        event.preventDefault();
+                    }
+                });
+            });
+    </script>
+
+}
