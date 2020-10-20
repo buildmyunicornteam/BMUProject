@@ -1,6 +1,5 @@
-﻿
-@using Model_Layer.Models;
-@model Model_Layer.Models.Idea
+﻿@using Business_Model.Model;
+@model Business_Model.Model.Idea
 
 @section PageStyle
 {
@@ -18,7 +17,7 @@
             background-color: #303641;
             border-radius: .25rem;
             background: red;
-            z-index:0;
+            z-index: 0;
             //width: 500px;
             // height: 10px !important;
         }
@@ -44,23 +43,25 @@
             overflow-x: auto !important;
             max-width: 90vw !important;
         }
+
         .youtube-icon {
             position: absolute;
             top: 40%;
             left: 45%;
             font-size: 30px;
         }
+
         .youtube-icon {
             position: absolute;
             top: 40%;
             left: 45%;
             font-size: 30px;
         }
-        .youtube-icon:hover {
-           
-            font-size: 40px;
-            color:red;
-        }
+
+            .youtube-icon:hover {
+                font-size: 40px;
+                color: red;
+            }
     </style>
 
 }
@@ -79,11 +80,11 @@
             </ol>
 
             @if (!@ViewBag.IsEdit)
-    {
-        <button type="button" class="btn btn-info d-none d-lg-block m-l-15 JsDownloadIdea"> <i class="fas fa-file-pdf"></i> Download</button>
-        <button type="button" class="btn btn-primary d-none d-lg-block m-l-15 JsUpdateIdea ">  Update Idea</button>
+            {
+                <button type="button" class="btn btn-info d-none d-lg-block m-l-15 JsDownloadIdea"> <i class="fas fa-file-pdf"></i> Download</button>
+                <button type="button" class="btn btn-primary d-none d-lg-block m-l-15 JsUpdateIdea ">  Update Idea</button>
 
-}
+            }
 
 
         </div>
@@ -129,7 +130,7 @@
         $(".stickyside").stick_in_parent({
             offset_top: 100
         });
-       
+
         $('.stickyside a').click(function () {
             $('html, body').animate({
                 scrollTop: $($(this).attr('href')).offset().top - 100
@@ -199,7 +200,7 @@
                 $("#cartoonVideo").attr('src', url);
             });
 
-     
+
         });
 
     </script>

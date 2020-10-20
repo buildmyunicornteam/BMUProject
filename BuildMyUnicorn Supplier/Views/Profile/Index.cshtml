@@ -1,5 +1,5 @@
-﻿@using Model_Layer.Models;
-@model Model_Layer.Models.Supplier
+﻿@using Business_Model.Model;
+@model Business_Model.Model.Supplier
 @section PageStyle
 {
     <link href="~/assets/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
@@ -116,7 +116,8 @@
                                     <form id="frm_UpdateProfile" class="form-material m-t-40" method="post">
                                         <input type="hidden" id="SupplierID" name="SupplierID" value="@Model.SupplierID" />
                                         <input type="hidden" id="ImageID" name="ImageID" value="@Model.ImageID" />
-
+                                        <input type="hidden" name="BusinessPlacement" id="BusinessPlacement" />
+                                        <input type="hidden" name="WorkLocation" id="WorkLocation" />
 
 
                                         <div class="card-body">
@@ -169,29 +170,29 @@
                                                         <div class="form-group">
                                                             <label>Business Placement  </label>
                                                             <div class="row">
-                                                                @{ var arrayWorkLocation = String.IsNullOrEmpty(@Model.WorkLocation) == false ? @Model.WorkLocation.Split(',').ToArray() : new string[0]; }
+                                                                @{ var arrayBusinessPlacement = String.IsNullOrEmpty(@Model.BusinessPlacement) == false ? @Model.BusinessPlacement.Split(',').ToArray() : new string[0]; }
                                                                 <div class="col-md-6">
-                                                                    @{ int Count = Enumerable.Count(ViewBag.WorkLocation);
+                                                                    @{ int Count = Enumerable.Count(ViewBag.BusinessPlacement);
                                                                         int halfCount = Count / 2;
                                                                         int x = 0;
 
                                                                     }
-                                                                    @foreach (var item in ViewBag.WorkLocation)
+                                                                    @foreach (var item in ViewBag.BusinessPlacement)
                                                                     {
 
                                                                         if (x <= halfCount)
                                                                         {
-                                                                            if (Array.Exists(arrayWorkLocation, o => o == Convert.ToString(@item.ID)) == true)
+                                                                            if (Array.Exists(arrayBusinessPlacement, o => o == Convert.ToString(@item.ID)) == true)
                                                                             {
                                                                                 <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="_RoleInCompany" value="@item.ID" checked="checked">
+                                                                                    <input type="checkbox" class="custom-control-input" id="@item.ID" name="_BusinessPlacement" value="@item.ID" checked="checked">
                                                                                     <label class="custom-control-label" for="@item.ID">@item.Value</label>
                                                                                 </div>
                                                                             }
                                                                             else
                                                                             {
                                                                                 <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="_RoleInCompany" value="@item.ID">
+                                                                                    <input type="checkbox" class="custom-control-input" id="@item.ID" name="_BusinessPlacement" value="@item.ID">
                                                                                     <label class="custom-control-label" for="@item.ID">@item.Value</label>
                                                                                 </div>
                                                                             }
@@ -204,23 +205,23 @@
 
                                                                 <div class="col-md-6">
                                                                     @{x = 0; }
-                                                                    @foreach (var item in ViewBag.WorkLocation)
+                                                                    @foreach (var item in ViewBag.BusinessPlacement)
                                                                     {
 
 
                                                                         if (x > halfCount)
                                                                         {
-                                                                            if (Array.Exists(arrayWorkLocation, o => o == Convert.ToString(@item.ID)) == true)
+                                                                            if (Array.Exists(arrayBusinessPlacement, o => o == Convert.ToString(@item.ID)) == true)
                                                                             {
                                                                                 <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="_RoleInCompany" value="@item.ID" checked="checked">
+                                                                                    <input type="checkbox" class="custom-control-input" id="@item.ID" name="_BusinessPlacement" value="@item.ID" checked="checked">
                                                                                     <label class="custom-control-label" for="@item.ID">@item.Value</label>
                                                                                 </div>
                                                                             }
                                                                             else
                                                                             {
                                                                                 <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input worklocation" id="@item.ID" name="_RoleInCompany" value="@item.ID">
+                                                                                    <input type="checkbox" class="custom-control-input" id="@item.ID" name="_BusinessPlacement" value="@item.ID">
                                                                                     <label class="custom-control-label" for="@item.ID">@item.Value</label>
                                                                                 </div>
                                                                             }
@@ -241,21 +242,21 @@
                                                             <label>Work Location </label> <br />
                                                             <div class="row">
 
-                                                                @{ var arrayBusinessPlacement = String.IsNullOrEmpty(@Model.BusinessPlacement) == false ? @Model.BusinessPlacement.Split(',').ToArray() : new string[0]; }
+                                                                @{ var arrayWorkLocation = String.IsNullOrEmpty(@Model.WorkLocation) == false ? @Model.WorkLocation.Split(',').ToArray() : new string[0]; }
                                                                 <div class="col-md-6">
-                                                                    @{ Count = Enumerable.Count(ViewBag.BusinessPlacement);
+                                                                    @{ Count = Enumerable.Count(ViewBag.WorkLocation);
                                                                         halfCount = Count / 2;
                                                                         x = 0;
 
                                                                     }
-                                                                    @foreach (var item in ViewBag.BusinessPlacement)
+                                                                    @foreach (var item in ViewBag.WorkLocation)
                                                                     {
                                                                         if (x < halfCount)
                                                                         {
                                                                             if (Array.Exists(arrayWorkLocation, o => o == Convert.ToString(@item.ID)) == true)
                                                                             {
                                                                                 <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="WorkLocation" value="@item.ID" checked="checked">
+                                                                                    <input type="checkbox" class="custom-control-input" id="@item.ID" name="_WorkLocation" value="@item.ID" checked="checked">
                                                                                     <label class="custom-control-label" for="@item.ID">@item.Value</label>
                                                                                 </div>
 
@@ -263,7 +264,7 @@
                                                                             else
                                                                             {
                                                                                 <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="WorkLocation" value="@item.ID">
+                                                                                    <input type="checkbox" class="custom-control-input" id="@item.ID" name="_WorkLocation" value="@item.ID">
                                                                                     <label class="custom-control-label" for="@item.ID">@item.Value</label>
                                                                                 </div>
                                                                             }
@@ -276,7 +277,7 @@
 
                                                                 <div class="col-md-6">
                                                                     @{x = 0; }
-                                                                    @foreach (var item in ViewBag.BusinessPlacement)
+                                                                    @foreach (var item in ViewBag.WorkLocation)
                                                                     {
 
 
@@ -285,14 +286,14 @@
                                                                             if (Array.Exists(arrayWorkLocation, o => o == Convert.ToString(@item.ID)) == true)
                                                                             {
                                                                                 <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="BusinessPlacement" value="@item.ID" checked="checked">
+                                                                                    <input type="checkbox" class="custom-control-input" id="@item.ID" name="_WorkLocation" value="@item.ID" checked="checked">
                                                                                     <label class="custom-control-label" for="@item.ID">@item.Value</label>
                                                                                 </div>
                                                                             }
                                                                             else
                                                                             {
                                                                                 <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input businessplacement" id="@item.ID" name="BusinessPlacement" value="@item.ID">
+                                                                                    <input type="checkbox" class="custom-control-input" id="@item.ID" name="_WorkLocation" value="@item.ID">
                                                                                     <label class="custom-control-label" for="@item.ID">@item.Value</label>
                                                                                 </div>
                                                                             }

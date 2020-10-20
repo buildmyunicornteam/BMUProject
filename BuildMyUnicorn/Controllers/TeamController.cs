@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Model_Layer.Models;
+using Business_Model.Model;
 using BuildMyUnicorn.Business_Layer;
 
 namespace BuildMyUnicorn.Controllers
@@ -43,6 +43,10 @@ namespace BuildMyUnicorn.Controllers
         public string UpdateClientProfile(Client Model)
         {
             return new ClientManager().UpdateClientProfile(Model);
+        }
+        public string UpdateTeamProfile(Client Model)
+        {
+            return new ClientManager().UpdateTeamProfile(Model);
         }
 
         public ActionResult Create()

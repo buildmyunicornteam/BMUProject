@@ -179,6 +179,31 @@ var actionType = "return";
 
  });
 
+$("#frm_UpdateProfile").submit(function (e) {
+
+    e.preventDefault();
+    var RoleInCompany = [];
+    $.each($("input[name='_RoleInCompany']:checked"), function () {
+        RoleInCompany.push($(this).val());
+
+    });
+   
+
+    $("#RoleInCompany").val(RoleInCompany.join(","));
+    $.ajax({
+        url: GetBaseURL() + "Team/UpdateClientProfile",
+        method: "POST",
+        data: $('#frm_UpdateProfile').serialize(),
+        success: function (response) {
+            location.reload(); 
+        },
+        error: function (response) {
+        }
+    });
+
+
+});
+
 $("#frm_UpdateClientTeam").submit(function (e) {
 
     e.preventDefault();
@@ -188,7 +213,7 @@ $("#frm_UpdateClientTeam").submit(function (e) {
     });
     $("#RoleInCompany").val(RoleInCompany);
     $.ajax({
-        url: GetBaseURL() + "Team/UpdateClientTeam",
+        url: GetBaseURL() + "Team/UpdateTeamProfile",
         method: "POST",
         data: $('#frm_UpdateClientTeam').serialize(),
         success: function (response) {

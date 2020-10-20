@@ -6131,9 +6131,9 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model Layer\Model Layer.csproj">
-      <Project>{8bdcb5a9-5c2a-4920-bedd-f75fc40d5451}</Project>
-      <Name>Model Layer</Name>
+    <ProjectReference Include="..\Business Model\Business Model.csproj">
+      <Project>{e84f655a-673e-47c6-8894-2f350891e687}</Project>
+      <Name>Business Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

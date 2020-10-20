@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using BuildMyUnicorn.Business_Layer;
-using Model_Layer.Models;
+using Business_Model.Model;
 
 namespace BuildMyUnicorn.Controllers
 {

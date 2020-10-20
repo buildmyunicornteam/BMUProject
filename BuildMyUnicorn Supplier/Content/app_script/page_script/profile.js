@@ -70,14 +70,14 @@ $("#frm_UpdateProfile").submit(function(e) {
         e.preventDefault();
         var BusinessPlacement = [];
         var Worklocation = [];
- $.each($("input[name='BusinessPlacement']:checked"), function () {
+        $.each($("input[name='_BusinessPlacement']:checked"), function () {
             BusinessPlacement.push($(this).val());
 
         });
- $.each($("input[name='WorkLocation']:checked"), function () {
+        $.each($("input[name='_WorkLocation']:checked"), function () {
             Worklocation.push($(this).val());
         });
-        
+      
         $("#BusinessPlacement").val(BusinessPlacement.join(","));
         $("#WorkLocation").val(Worklocation.join(","));
           $.ajax({

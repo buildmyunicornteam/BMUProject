@@ -41,36 +41,30 @@ $(document).ready(function () {
     $("li ul").removeClass("in");
     $("#Dashboardnav").addClass("active");
 });
-$("#frm_UpdateProfile").submit(function(e) {
+$("#frm_UpdateProfile").submit(function (e) {
 
-        //prevent Default functionality
-        e.preventDefault();
-        var BusinessPlacement = [];
-        var Worklocation = [];
- $.each($("input[name='BusinessPlacement']:checked"), function () {
-            BusinessPlacement.push($(this).val());
+    e.preventDefault();
+    var RoleInCompany = [];
+    $.each($("input[name='_RoleInCompany']:checked"), function () {
+        RoleInCompany.push($(this).val());
 
-        });
- $.each($("input[name='WorkLocation']:checked"), function () {
-            Worklocation.push($(this).val());
-        });
-        
-        $("#BusinessPlacement").val(BusinessPlacement.join(","));
-        $("#WorkLocation").val(Worklocation.join(","));
-          $.ajax({
-                url:  GetBaseURL() + "Profile/UpdateProfile",
-                method: "POST",
-                data: $('#frm_UpdateProfile').serialize(),
-                success: function (response) {
-                // location.reload(); 
-                },
-                error: function (response) {
-                }
-            });
-
-      
     });
 
+
+    $("#RoleInCompany").val(RoleInCompany.join(","));
+    $.ajax({
+        url: GetBaseURL() + "Team/UpdateClientProfile",
+        method: "POST",
+        data: $('#frm_UpdateProfile').serialize(),
+        success: function (response) {
+            location.reload();
+        },
+        error: function (response) {
+        }
+    });
+
+
+});
 
  $("#ImageUpload").on('change', function () {
     

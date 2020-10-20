@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using BuildMyUnicorn_Supplier.Business_Layer;
-using Model_Layer.Models;
+using Business_Model.Model;
 
 namespace BuildMyUnicorn_Supplier.Controllers
 {

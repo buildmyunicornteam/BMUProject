@@ -1,4 +1,4 @@
-﻿@using Model_Layer.Models;
+﻿@using Business_Model.Model;
 @model IEnumerable<Package>
 
 
@@ -54,15 +54,15 @@
 
                             </td>
                             <td class="text-left">
-                               
+
                                 @*<a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Edit"> <i class="fas fa-pencil-alt" title="Edit"></i> </a>*@
                                 <a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Delete" class="jsDeletePackage" data-supplierackageid="@item.SupplierPackageID"> <i class="fas fa-trash-alt" title="Delete"></i> </a>
 
-                               
+
                                 <a href="~/Package/Edit?SupplierPackageID=@item.SupplierPackageID" data-toggle="tooltip" data-original-title="Close">
                                     <i class="fas fa-external-link-square-alt" title="update"></i>
                                 </a>
-                              
+
                             </td>
 
                         </tr>

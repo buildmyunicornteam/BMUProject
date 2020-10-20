@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Administration.Business_Layer;
-using Model_Layer.Models;
+using Business_Model.Model;
 
 namespace Administration.Controllers
 {

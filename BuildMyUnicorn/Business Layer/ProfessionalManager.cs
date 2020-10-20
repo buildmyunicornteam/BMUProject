@@ -5,8 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using ALMS_DAL;
-using Model_Layer.Models;
-using Model_Layer.Helper;
+using Business_Model.Model;
+using Business_Model.Helper;
 namespace BuildMyUnicorn.Business_Layer
 {
     public class ProfessionalManager

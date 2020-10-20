@@ -95,6 +95,12 @@ C:\Projects\BMUnicorn\BuildMyUnicorn\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Cli
 C:\Projects\BMUnicorn\BuildMyUnicorn\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Client.csproj.CopyComplete
 C:\Projects\BMUnicorn\BuildMyUnicorn\BuildMyUnicorn\obj\Debug\BuildMyUnicorn.dll
 C:\Projects\BMUnicorn\BuildMyUnicorn\BuildMyUnicorn\obj\Debug\BuildMyUnicorn.pdb
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.Reflection.Metadata.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\VBCSCompiler.exe
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\ApplicationInsights.config
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\BuildMyUnicorn.dll.config
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\BuildMyUnicorn.dll
@@ -106,13 +112,9 @@ C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\csi.exe
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\csi.exe.config
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\csi.rsp
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -127,7 +129,6 @@ C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.IO.FileSy
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.IO.Pipes.dll
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.Reflection.Metadata.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.Security.AccessControl.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.Security.Claims.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.Security.Cryptography.Algorithms.dll
@@ -145,10 +146,10 @@ C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\System.Xml.XPath
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\vbc.exe
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\vbc.exe.config
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\vbc.rsp
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\VBCSCompiler.exe
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\roslyn\VBCSCompiler.exe.config
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\ALMS DAL.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Antlr3.Runtime.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Business Model.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Dapper.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\itextsharp.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.Agent.Intercept.dll
@@ -160,7 +161,6 @@ C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.WindowsSer
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.ApplicationInsights.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.Web.Infrastructure.dll
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Model Layer.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Newtonsoft.Json.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\System.Web.Helpers.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\System.Web.Mvc.dll
@@ -170,7 +170,7 @@ C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\System.Web.WebPages.Dep
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\System.Web.WebPages.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\System.Web.WebPages.Razor.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\WebGrease.dll
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Model Layer.pdb
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Business Model.pdb
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\itextsharp.xml
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\System.Web.Helpers.xml
@@ -187,8 +187,8 @@ C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.Dependency
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.WindowsServer.xml
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\bin\Microsoft.AI.Web.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Client.csprojAssemblyReference.cache
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Client.csproj.CoreCompileInputs.cache
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Client.csproj.CopyComplete
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn.dll
 C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn.pdb
-C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn\obj\Debug\BuildMyUnicorn Client.csprojAssemblyReference.cache

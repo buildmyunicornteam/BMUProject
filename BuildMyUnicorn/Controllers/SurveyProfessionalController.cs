@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Web.Mvc;
 using BuildMyUnicorn.Business_Layer;
-using Model_Layer.Models;
+using Business_Model.Model;
 using Newtonsoft.Json;
 
 namespace BuildMyUnicorn.Controllers

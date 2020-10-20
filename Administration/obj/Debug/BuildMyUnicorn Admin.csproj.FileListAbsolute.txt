@@ -149,6 +149,7 @@ C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\roslyn\VBCSCompiler.exe
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\roslyn\VBCSCompiler.exe.config
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\ALMS DAL.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Antlr3.Runtime.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Business Model.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Dapper.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.AI.DependencyCollector.dll
@@ -159,7 +160,6 @@ C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.AI.WindowsSer
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.ApplicationInsights.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.Web.Infrastructure.dll
-C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Model Layer.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Newtonsoft.Json.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\System.Web.Helpers.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\System.Web.Mvc.dll
@@ -170,7 +170,7 @@ C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\System.Web.WebPages.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\System.Web.WebPages.Razor.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\WebGrease.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\itextsharp.dll
-C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Model Layer.pdb
+C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Business Model.pdb
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\System.Web.Helpers.xml
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\System.Web.Mvc.xml
@@ -187,7 +187,7 @@ C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.AI.ServerTele
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.AI.WindowsServer.xml
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\Microsoft.AI.Web.xml
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\bin\itextsharp.xml
-C:\Projects\BuildMyUnicorn\BMUProject\Administration\obj\Debug\BuildMyUnicorn Admin.csprojResolveAssemblyReference.cache
+C:\Projects\BuildMyUnicorn\BMUProject\Administration\obj\Debug\BuildMyUnicorn Admin.csprojAssemblyReference.cache
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\obj\Debug\BuildMyUnicorn Admin.csproj.CoreCompileInputs.cache
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\obj\Debug\BuildMyUnicorn Admin.csproj.CopyComplete
 C:\Projects\BuildMyUnicorn\BMUProject\Administration\obj\Debug\Administration.dll

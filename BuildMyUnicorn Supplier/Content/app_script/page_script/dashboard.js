@@ -59,16 +59,16 @@ $("#frm_UpdateProfile").submit(function(e) {
 
         //prevent Default functionality
         e.preventDefault();
-        var BusinessPlacement = [];
+          var BusinessPlacement = [];
         var Worklocation = [];
-         $(".businessplacement").each(function() {
+        $.each($("input[name='_BusinessPlacement']:checked"), function () {
+            BusinessPlacement.push($(this).val());
 
-           BusinessPlacement.push($(this).val());
-         });
-        $(".worklocation").each(function() {
-
-           Worklocation.push($(this).val());
-         });
+        });
+         $.each($("input[name='_WorkLocation']:checked"), function () {
+            Worklocation.push($(this).val());
+        });
+      
         $("#BusinessPlacement").val(BusinessPlacement.join(","));
         $("#WorkLocation").val(Worklocation.join(","));
           $.ajax({

@@ -1,0 +1,20 @@
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\Business Model.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\Business Model.pdb
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\itextsharp.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.Mvc.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.Razor.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.WebPages.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\itextsharp.xml
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.Mvc.xml
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.Razor.xml
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.WebPages.xml
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\obj\Debug\Business Model.csprojAssemblyReference.cache
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\obj\Debug\Business Model.csproj.CoreCompileInputs.cache
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\obj\Debug\Business Model.csproj.CopyComplete
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\obj\Debug\Business Model.dll
+C:\Projects\BuildMyUnicorn\BMUProject\Business Model\obj\Debug\Business Model.pdb

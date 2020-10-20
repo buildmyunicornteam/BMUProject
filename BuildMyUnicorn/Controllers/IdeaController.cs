@@ -1,5 +1,4 @@
 ﻿using BuildMyUnicorn.Business_Layer;
-using Model_Layer.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +6,8 @@ using System.Linq;
 using System.Web.Mvc;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using Model_Layer.Helper;
+using Business_Model.Model;
+using Business_Model.Helper;
 using System.Drawing;
 
 

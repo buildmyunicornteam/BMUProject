@@ -1,5 +1,5 @@
-﻿@using Model_Layer.Models;
-@model Model_Layer.Models.Idea
+﻿@using Business_Model.Model;
+@model Business_Model.Model.Idea
 
 <div class="row" id="validation">
     <div class="col-9">
@@ -196,7 +196,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="wint1">What is the name of the company</label>
-                                    <input type="text" class='form-control  progress-required @( Model.Company.CompanyName != null ? "progress-percent" :"")' id="CompanyName" name="CompanyName" value="@Model.Company.CompanyName"/>
+                                    <input type="text" class='form-control  progress-required @( Model.Company.CompanyName != null ? "progress-percent" :"")' id="CompanyName" name="CompanyName" value="@Model.Company.CompanyName" />
                                     @*<textarea class='form-control ideatextarea progress-required @( Model.Company.CompanyName != null ? "progress-percent" :"")' id="CompanyName" name="CompanyName" oninput="auto_grow_idea_textarea(this)">  @Model.Company.CompanyName</textarea>*@
                                 </div>
                             </div>
@@ -412,19 +412,19 @@
     </div>
 
     <div class="col-md-3">
-       
-       
-       
-            <div class="thumbnail" data-toggle="modal" data-target="#myModal" style="position:relative;">
-            
-                    <img src="https://img.youtube.com/vi/b6hHqc0jpjo/0.jpg" class="img-thumbnail" alt="Lights" style="width:100%">
-                    <div class="caption">
-                        <p class="youtube-icon" ><i class="fab fa-youtube"></i></p>
-                    </div>
-               
+
+
+
+        <div class="thumbnail" data-toggle="modal" data-target="#myModal" style="position:relative;">
+
+            <img src="https://img.youtube.com/vi/b6hHqc0jpjo/0.jpg" class="img-thumbnail" alt="Lights" style="width:100%">
+            <div class="caption">
+                <p class="youtube-icon"><i class="fab fa-youtube"></i></p>
             </div>
+
         </div>
-   
+    </div>
+
 </div>
 
 <div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
