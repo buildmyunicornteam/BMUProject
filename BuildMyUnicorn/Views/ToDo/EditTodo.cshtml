@@ -1,0 +1,13 @@
+﻿@model Business_Model.Model.ToDoTask
+
+@{
+    ViewBag.Title = "Edit Todo";
+}
+@if(TempData["Message"] != null)
+{
+    <div class="dz-success">
+        @TempData["Message"]
+    </div>
+}
+@Html.Partial("_EditToDoPartial", Model);
+

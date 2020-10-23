@@ -160,6 +160,8 @@
     <Compile Include="Business Layer\IdeaManager.cs" />
     <Compile Include="Business Layer\Master.cs" />
     <Compile Include="Business Layer\ProfessionalManager.cs" />
+    <Compile Include="Business Layer\SharedManager.cs" />
+    <Compile Include="Business Layer\ToDoTaskManager.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IdeaController.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\ToDoController.cs" />
     <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -6124,6 +6127,10 @@
     <Content Include="Views\SurveyProfessional\Package.cshtml" />
     <Content Include="Views\SurveyProfessional\Question.cshtml" />
     <Content Include="Views\Dialog\_Payment.cshtml" />
+    <Content Include="Views\ToDo\AddTodo.cshtml" />
+    <Content Include="Views\ToDo\_EditTodoPartial.cshtml" />
+    <Content Include="Views\ToDo\EditTodo.cshtml" />
+    <Content Include="Views\ToDo\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="assets\node_modules\kendoui\typescript\kendo.all.d.ts" />

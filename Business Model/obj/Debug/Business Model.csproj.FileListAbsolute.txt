@@ -18,3 +18,21 @@ C:\Projects\BuildMyUnicorn\BMUProject\Business Model\obj\Debug\Business Model.cs
 C:\Projects\BuildMyUnicorn\BMUProject\Business Model\obj\Debug\Business Model.csproj.CopyComplete
 C:\Projects\BuildMyUnicorn\BMUProject\Business Model\obj\Debug\Business Model.dll
 C:\Projects\BuildMyUnicorn\BMUProject\Business Model\obj\Debug\Business Model.pdb
+G:\Project Repository\BMUProject\Business Model\bin\Debug\Business Model.dll
+G:\Project Repository\BMUProject\Business Model\bin\Debug\Business Model.pdb
+G:\Project Repository\BMUProject\Business Model\bin\Debug\System.Web.Razor.dll
+G:\Project Repository\BMUProject\Business Model\bin\Debug\System.Web.WebPages.Razor.dll
+G:\Project Repository\BMUProject\Business Model\bin\Debug\System.Web.WebPages.dll
+G:\Project Repository\BMUProject\Business Model\bin\Debug\Microsoft.Web.Infrastructure.dll
+G:\Project Repository\BMUProject\Business Model\bin\Debug\System.Web.WebPages.Deployment.dll
+G:\Project Repository\BMUProject\Business Model\bin\Debug\itextsharp.xml
+G:\Project Repository\BMUProject\Business Model\bin\Debug\System.Web.Mvc.xml
+G:\Project Repository\BMUProject\Business Model\bin\Debug\System.Web.Razor.xml
+G:\Project Repository\BMUProject\Business Model\bin\Debug\System.Web.WebPages.Razor.xml
+G:\Project Repository\BMUProject\Business Model\bin\Debug\System.Web.WebPages.xml
+G:\Project Repository\BMUProject\Business Model\bin\Debug\System.Web.WebPages.Deployment.xml
+G:\Project Repository\BMUProject\Business Model\obj\Debug\Business Model.csprojAssemblyReference.cache
+G:\Project Repository\BMUProject\Business Model\obj\Debug\Business Model.csproj.CoreCompileInputs.cache
+G:\Project Repository\BMUProject\Business Model\obj\Debug\Business Model.csproj.CopyComplete
+G:\Project Repository\BMUProject\Business Model\obj\Debug\Business Model.dll
+G:\Project Repository\BMUProject\Business Model\obj\Debug\Business Model.pdb

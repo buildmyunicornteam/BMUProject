@@ -1,0 +1,78 @@
+﻿@using Business_Model.Helper;
+@model IEnumerable<Business_Model.Model.ToDoTask>
+
+@{
+    ViewBag.Title = "List";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="dz-success">
+        @TempData["Message"]
+    </div>
+}
+
+@{ 
+    string GetShortFormat(DateTime? date)
+    {
+        if (date == null)
+            return string.Empty;
+
+       return date.GetValueOrDefault().ToString("dd-MM-yyy");
+    }
+}
+
+
+<!-- Column -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">To-Do List</h4>
+        <h6 class="card-subtitle"></h6>
+        <a href="addtodo" class="btn btn-info btn-rounded m-t-10 float-right">Create New</a>
+        <div class="table-responsive">
+            <table id="demo-foo-row-toggler" class="table table-bordered" data-toggle-column="first">
+                <thead>
+                    <tr>
+                        <th data-breakpoints="xs">Subject</th>
+                        <th>Description</th>
+                        <th>Start Date</th>
+                        <th data-breakpoints="xs sm">End Date</th>
+                        <th data-breakpoints="xs">% Complete</th>
+                        <th data-breakpoints="all">Assigned on</th>
+                        <th data-breakpoints="all">Completed on</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        var labelClass = item.Status == ToDoStatus.Active ? "label-success" :
+                            item.Status == ToDoStatus.Completed ? "label-danger" : "label-inverse";
+                    <tr data-expanded="true">
+                        <td>
+                            @item.Subject
+                        </td>
+                        <td>
+                            @item.Description
+                        </td>
+                        <td>@GetShortFormat(item.StartDate)</td>
+                        <td>@GetShortFormat(item.EndDate)</td>
+                        <td>@item.PercentComplete</td>
+                        <td>@GetShortFormat(item.AssignedOn)</td>
+                        <td>@GetShortFormat(item.CompletedOn)</td>
+                        <td><span class="label @labelClass">@item.Status.ToString()</span> </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditToDo", new { id = item.ToDoTaskID })|
+                            @Html.ActionLink("Delete", "DeleteToDO", new { id = item.ToDoTaskID })
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Column -->
+
+

@@ -1,0 +1,20 @@
+
+CREATE TABLE [dbo].[tbl_todo_task](
+	[ToDoTaskID] [uniqueidentifier] Primary Key Default NEWID() NOT NULL,
+	[Subject] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[StartDate] [datetime] NULL,
+	[EndDate] [datetime] NULL,
+	[Status] [smallint] NOT NULL,
+	[PercentComplete] [float] NULL,
+	[AssignedTo] [uniqueidentifier] NULL,
+	[AssignedBy] [uniqueidentifier] NULL,
+	[AssignedOn] [datetime] NULL,
+	[CompletedOn] [datetime] NULL,
+	[CreatedBy] [uniqueidentifier] NULL,
+	[ModifiedBy] [uniqueidentifier] NULL,
+	[CreatedDateTime] [datetime] NOT NULL,
+	[ModifiedDateTime] [datetime] NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+)

@@ -1,0 +1,98 @@
+﻿@model Business_Model.Model.ToDoTask
+
+@{
+    string cardTitle = Model == null || Model.ToDoTaskID == Guid.Empty ? "Add Todo" : "Edit Todo";
+    bool isEdit = Model != null && Model.EntityState == Business_Model.Helper.EntityState.Old;
+}
+<p>
+    @Html.ActionLink("Back to List", "List")
+</p>
+<div class="card-body">
+    <form method="post">
+        @if (isEdit)
+        {
+            @Html.HiddenFor(model => model.ToDoTaskID)
+            @Html.HiddenFor(model => model.AssignedBy)
+            @Html.HiddenFor(model => model.AssignedOn)
+            @Html.HiddenFor(model => model.CompletedOn)
+            @Html.HiddenFor(model => model.IsActive)
+            @Html.HiddenFor(model => model.IsDeleted)
+            @Html.HiddenFor(model => model.EntityState)
+        }
+
+        <div class="form-body">
+            <h3 class="card-title">@cardTitle</h3>
+            <hr>
+            <div class="row p-t-20">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Subject</label>
+                        @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control", placeholder = "Title" } })
+                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <!--/span-->
+                <div class="col-md-6">
+                    <div class="form-group has-danger">
+                        <label class="control-label">Description</label>
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = "Description" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <!--/span-->
+            </div>
+            <!--/row-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group has-success">
+                        <label class="control-label">Assigned To</label>
+                        @Html.DropDownListFor(x => x.AssignedTo, null, "Assign To", new { @class = "form-control custom-select" })
+
+                        @Html.ValidationMessageFor(model => model.AssignedTo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <!--/span-->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Start Date</label>
+                        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control", placeholder = "dd/mm/yyyy" } })
+                        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <!--/span-->
+            </div>
+            <!--/row-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">End Date</label>
+                        @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control", placeholder = "dd/mm/yyyy" } })
+                        @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <!--/span-->
+                <div class="col-md-6">
+                    <label class="control-label">Status</label>
+                    @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                </div>
+                <!--/span-->
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="form-group">
+                        <label>Percent Complete</label>
+                        @Html.EditorFor(model => model.PercentComplete, new { htmlAttributes = new { @class = "form-control", max = "100", min = "0" } })
+                        @Html.ValidationMessageFor(model => model.PercentComplete, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+            <button type="button" class="btn btn-inverse">Cancel</button>
+        </div>
+    </form>
+</div>
+

@@ -35,6 +35,7 @@
       <HintPath>..\..\..\..\Users\Spectre\Desktop\New folder (2)\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -51,14 +52,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\Attributes.cs" />
     <Compile Include="Helper\CustomAuthorize.cs" />
     <Compile Include="Helper\EmailSender.cs" />
     <Compile Include="Helper\EmailTemplates.cs" />
     <Compile Include="Helper\Encryption.cs" />
+    <Compile Include="Helper\Enums.cs" />
     <Compile Include="Helper\Extensions.cs" />
     <Compile Include="Helper\ITextEvents.cs" />
     <Compile Include="Helper\Keygen.cs" />
+    <Compile Include="Helper\ListItem.cs" />
+    <Compile Include="Helper\ResponseModel.cs" />
     <Compile Include="Model\AdminUser.cs" />
+    <Compile Include="Model\BaseObject.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Common.cs" />
     <Compile Include="Model\Country.cs" />
@@ -66,13 +72,17 @@
     <Compile Include="Model\Dashboard.cs" />
     <Compile Include="Model\EmailConfirmation.cs" />
     <Compile Include="Model\ForgotPassword.cs" />
+    <Compile Include="Model\IBaseObject.cs" />
     <Compile Include="Model\Idea.cs" />
     <Compile Include="Model\IdeaList.cs" />
     <Compile Include="Model\Master.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\Survey.cs" />
+    <Compile Include="Model\ToDoTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Helper\SQLDBChanges.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
