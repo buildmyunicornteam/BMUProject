@@ -79,7 +79,9 @@ namespace BuildMyUnicorn.Business_Layer
             else
                 toDo.CompletedOn = DateTime.UtcNow;
 
-            return SharedManager.Update(toDo, UpdateQuery);
+            var resposne = SharedManager.Update(toDo, UpdateQuery);
+            resposne.EntityID = toDo.ToDoTaskID;
+            return resposne;
         }
 
         public int DeleteToDo(Guid id)

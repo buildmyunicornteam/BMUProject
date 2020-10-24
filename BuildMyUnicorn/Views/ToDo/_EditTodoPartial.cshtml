@@ -1,14 +1,16 @@
 ﻿@model Business_Model.Model.ToDoTask
 
 @{
-    string cardTitle = Model == null || Model.ToDoTaskID == Guid.Empty ? "Add Todo" : "Edit Todo";
     bool isEdit = Model != null && Model.EntityState == Business_Model.Helper.EntityState.Old;
+    string cardTitle = isEdit ? "Edit Todo" : "Add Todo";
+    string action = isEdit ? "EditTodo" : "AddTodo";
+
 }
 <p>
     @Html.ActionLink("Back to List", "List")
 </p>
 <div class="card-body">
-    <form method="post">
+    <form method="post" id="todoform" action="@Url.Action(action)">
         @if (isEdit)
         {
             @Html.HiddenFor(model => model.ToDoTaskID)
@@ -83,7 +85,7 @@
                 <div class="col-md-12 ">
                     <div class="form-group">
                         <label>Percent Complete</label>
-                        @Html.EditorFor(model => model.PercentComplete, new { htmlAttributes = new { @class = "form-control", max = "100", min = "0" } })
+                        @Html.EditorFor(model => model.PercentComplete, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.PercentComplete, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -95,4 +97,3 @@
         </div>
     </form>
 </div>
-

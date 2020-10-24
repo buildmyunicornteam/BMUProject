@@ -1,4 +1,5 @@
 ﻿using BuildMyUnicorn.Business_Layer;
+using Business_Model.Helper;
 using Business_Model.Model;
 using System;
 using System.Collections.Generic;
@@ -23,23 +24,26 @@ namespace BuildMyUnicorn.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddTodo(ToDoTask todo)
+        public JsonResult AddTodo(ToDoTask todo)
         {
+            ResponseModel response = new ResponseModel();
             if (ModelState.IsValid)
             {
-                var returnVal = _todoManager.SaveToDo(todo);
+                response = _todoManager.SaveToDo(todo);
 
-                if (returnVal.HasError)
+                if (!response.HasError)
                 {
-                    ViewBag.Error = returnVal.Error;
-                    return View();
+                    response.Message = "To-Do created successfully ";
+                    return Json(response);
                 }
-
-                TempData["Message"] = "To-Do created successfully ";
-                return RedirectToAction("EditToDo", new { id = returnVal.EntityID });
+                
             }
-            FillTeamMemberDropDown();
-            return View();
+            else
+            {
+                response.Error = "Model Validation Error";
+            }
+            Response.StatusCode = 400;
+            return Json(response);
         }
 
 
@@ -51,15 +55,26 @@ namespace BuildMyUnicorn.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditTodo(ToDoTask todo)
+        public JsonResult EditTodo(ToDoTask todo)
         {
+            ResponseModel response = new ResponseModel();
             if (ModelState.IsValid)
             {
-                _todoManager.UpdateToDo(todo);
-                return RedirectToAction("EditToDo", new { id = todo.ToDoTaskID });
+                response = _todoManager.UpdateToDo(todo);
+
+                if (!response.HasError)
+                {
+                    response.Message = "To-Do updated successfully ";
+                    return Json(response);
+                }
+
             }
-            FillTeamMemberDropDown();
-            return View(todo);
+            else
+            {
+                response.Error = "Model Validation Error";
+            }
+            Response.StatusCode = 400;
+            return Json(response);
         }
 
 
@@ -68,11 +83,11 @@ namespace BuildMyUnicorn.Controllers
             return View(_todoManager.GetTodoList());
         }
 
+        [HttpPost]
         public ActionResult DeleteTodo(Guid id)
         {
             _todoManager.DeleteToDo(id);
-            TempData["Message"] = "To-Do deleted successfully ";
-            return RedirectToAction("List");
+            return PartialView("_TodoListPartial", _todoManager.GetTodoList());
         }
 
        public void FillTeamMemberDropDown()

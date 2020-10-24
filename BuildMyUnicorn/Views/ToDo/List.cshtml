@@ -5,24 +5,6 @@
     ViewBag.Title = "List";
 }
 
-@if (TempData["Message"] != null)
-{
-    <div class="dz-success">
-        @TempData["Message"]
-    </div>
-}
-
-@{ 
-    string GetShortFormat(DateTime? date)
-    {
-        if (date == null)
-            return string.Empty;
-
-       return date.GetValueOrDefault().ToString("dd-MM-yyy");
-    }
-}
-
-
 <!-- Column -->
 <div class="card">
     <div class="card-body">
@@ -45,34 +27,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model)
-                    {
-                        var labelClass = item.Status == ToDoStatus.Active ? "label-success" :
-                            item.Status == ToDoStatus.Completed ? "label-danger" : "label-inverse";
-                    <tr data-expanded="true">
-                        <td>
-                            @item.Subject
-                        </td>
-                        <td>
-                            @item.Description
-                        </td>
-                        <td>@GetShortFormat(item.StartDate)</td>
-                        <td>@GetShortFormat(item.EndDate)</td>
-                        <td>@item.PercentComplete</td>
-                        <td>@GetShortFormat(item.AssignedOn)</td>
-                        <td>@GetShortFormat(item.CompletedOn)</td>
-                        <td><span class="label @labelClass">@item.Status.ToString()</span> </td>
-                        <td>
-                            @Html.ActionLink("Edit", "EditToDo", new { id = item.ToDoTaskID })|
-                            @Html.ActionLink("Delete", "DeleteToDO", new { id = item.ToDoTaskID })
-                        </td>
-                    </tr>
-                    }
+                    @Html.Partial("_TodoListPartial", Model)
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+@section PageScript
+{
+    <link href="~/assetsss/js/toastr.min.css" rel="stylesheet" />
+    <script src="~/assetsss/js/toastr.min.js"></script>
+    <script src="~/assetsss/js/todo-script.js"></script>
+}
 <!-- Column -->
-
-

@@ -17,6 +17,8 @@ namespace Business_Model.Helper
 
         public string Error { get; set; }
 
+        public string Message { get; set; }
+
         public HttpStatusCode StatusCode { get; set; }
     }
 }

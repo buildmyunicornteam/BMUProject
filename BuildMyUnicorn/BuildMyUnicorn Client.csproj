@@ -183,6 +183,12 @@
   <ItemGroup>
     <Content Include="assetsss\css\style.css" />
     <Content Include="assetsss\js\jq.progress-bar.js" />
+    <Content Include="assetsss\js\jquery-3.2.1.min.js" />
+    <Content Include="assetsss\js\jquery.validate.min.js" />
+    <Content Include="assetsss\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="assetsss\js\toastr.min.css" />
+    <Content Include="assetsss\js\toastr.min.js" />
+    <Content Include="assetsss\js\todo-script.js" />
     <Content Include="assets\icons\crypto-icons\cryptocoins-colors.css" />
     <Content Include="assets\icons\crypto-icons\cryptocoins.css" />
     <Content Include="assets\icons\flag-icon-css\flag-icon.min.css" />
@@ -6131,6 +6137,8 @@
     <Content Include="Views\ToDo\_EditTodoPartial.cshtml" />
     <Content Include="Views\ToDo\EditTodo.cshtml" />
     <Content Include="Views\ToDo\List.cshtml" />
+    <Content Include="Views\ToDo\_TodoListPartial.cshtml" />
+    <Content Include="Views\ToDo\_ToDoScript.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="assets\node_modules\kendoui\typescript\kendo.all.d.ts" />

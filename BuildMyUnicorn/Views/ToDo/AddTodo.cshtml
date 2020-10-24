@@ -3,3 +3,10 @@
     ViewBag.Title = "Add Todo";
 }
 @Html.Partial("_EditToDoPartial", Model);
+
+@section PageScript
+{
+    <link href="~/assetsss/js/toastr.min.css" rel="stylesheet" />
+    <script src="~/assetsss/js/toastr.min.js"></script>
+    <script src="~/assetsss/js/todo-script.js"></script>
+}

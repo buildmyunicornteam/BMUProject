@@ -1,0 +1,38 @@
+﻿@using Business_Model.Helper;
+@model IEnumerable<Business_Model.Model.ToDoTask>
+
+
+@{
+    string GetShortFormat(DateTime? date)
+    {
+        if (date == null)
+            return string.Empty;
+
+        return date.GetValueOrDefault().ToString("dd-MM-yyyy");
+    }
+}
+
+
+@foreach (var item in Model)
+{
+    var labelClass = item.Status == ToDoStatus.Active ? "label-success" :
+        item.Status == ToDoStatus.Completed ? "label-danger" : "label-inverse";
+    <tr data-expanded="true">
+        <td>
+            @item.Subject
+        </td>
+        <td>
+            @item.Description
+        </td>
+        <td>@GetShortFormat(item.StartDate)</td>
+        <td>@GetShortFormat(item.EndDate)</td>
+        <td>@item.PercentComplete</td>
+        <td>@GetShortFormat(item.AssignedOn)</td>
+        <td>@GetShortFormat(item.CompletedOn)</td>
+        <td><span class="label @labelClass">@item.Status.ToString()</span> </td>
+        <td>
+            @Html.ActionLink("Edit", "EditToDo", new { id = item.ToDoTaskID }, new { @class = "btn btn-primary" })|
+            <button class="delete btn btn-danger" data-id="@item.ToDoTaskID">Delete</button>
+        </td>
+    </tr>
+}
