@@ -1,0 +1,192 @@
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\ApplicationInsights.config
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\BuildMyUnicorn Supplier.dll.config
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\BuildMyUnicorn Supplier.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\BuildMyUnicorn Supplier.pdb
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csc.exe
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csc.exe.config
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csc.rsp
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csi.exe
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csi.exe.config
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csi.rsp
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.AppContext.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Collections.Immutable.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Console.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Diagnostics.Process.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.Compression.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.FileSystem.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.Pipes.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Reflection.Metadata.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.AccessControl.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Claims.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Threading.Thread.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.ValueTuple.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Xml.XPath.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\vbc.exe
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\vbc.exe.config
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\vbc.rsp
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\VBCSCompiler.exe
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\VBCSCompiler.exe.config
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\ALMS DAL.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Antlr3.Runtime.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Business Model.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Dapper.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.DependencyCollector.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.Web.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.WindowsServer.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.ApplicationInsights.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Newtonsoft.Json.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Helpers.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Mvc.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Optimization.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Razor.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.Razor.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\WebGrease.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\itextsharp.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Business Model.pdb
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Helpers.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Mvc.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Optimization.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Razor.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.Razor.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Antlr3.Runtime.pdb
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Newtonsoft.Json.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.ApplicationInsights.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.DependencyCollector.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.WindowsServer.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.Web.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\bin\itextsharp.xml
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.csprojAssemblyReference.cache
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.csproj.CoreCompileInputs.cache
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.csproj.CopyComplete
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.dll
+C:\Projects\BuildMyUnicorn\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.pdb
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\ApplicationInsights.config
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\BuildMyUnicorn Supplier.dll.config
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\BuildMyUnicorn Supplier.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\BuildMyUnicorn Supplier.pdb
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csc.exe
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csc.exe.config
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csc.rsp
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csi.exe
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csi.exe.config
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\csi.rsp
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\Microsoft.Win32.Primitives.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.AppContext.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Collections.Immutable.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Console.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Diagnostics.Process.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Diagnostics.StackTrace.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.Compression.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.FileSystem.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.IO.Pipes.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Reflection.Metadata.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.AccessControl.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Claims.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Cryptography.Encoding.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Cryptography.Primitives.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Security.Principal.Windows.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Threading.Thread.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.ValueTuple.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Xml.ReaderWriter.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Xml.XmlDocument.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Xml.XPath.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\System.Xml.XPath.XDocument.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\vbc.exe
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\vbc.exe.config
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\vbc.rsp
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\VBCSCompiler.exe
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\roslyn\VBCSCompiler.exe.config
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Antlr3.Runtime.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Business Model.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.Agent.Intercept.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.DependencyCollector.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.Web.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.WindowsServer.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.ApplicationInsights.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.Web.Infrastructure.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Newtonsoft.Json.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Helpers.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Mvc.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Optimization.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Razor.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.Deployment.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.Razor.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\WebGrease.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\itextsharp.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Business Model.pdb
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Helpers.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Mvc.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Optimization.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.Razor.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.Deployment.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\System.Web.WebPages.Razor.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Antlr3.Runtime.pdb
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Newtonsoft.Json.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.ApplicationInsights.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.DependencyCollector.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.WindowsServer.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\Microsoft.AI.Web.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\bin\itextsharp.xml
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.csprojAssemblyReference.cache
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.csproj.CoreCompileInputs.cache
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.csproj.CopyComplete
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.dll
+G:\Project Repository\BMUProject\BuildMyUnicorn Supplier\obj\Debug\BuildMyUnicorn Supplier.pdb
